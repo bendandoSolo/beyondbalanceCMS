@@ -1,0 +1,303 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+}
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@section MetaData{
+    <meta name="description" content="Beyond Balance: Simon Alebiosu and Georgia Lennard Elite Personal Trainers." />
+}
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">YOUR THYROID ACTION PLAN STARTS NOW</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center">Join our Thyroid mailing list to receive your plan!</h5>
+                <img style="width:300px ; height: auto; display: block; margin: 8px auto;" src="~/Content/Images/Nutrition/GeorgiaThyroid.jpg" />
+                <p class="d-none d-lg-block">Opt in to receive updates on thyroid health, unsubscribe any time.</p>
+                <p class="d-none d-lg-block" >We value your privacy and will never share your data with third parties. </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" >No Thanks</button>
+                <button id="modal-yes" type="button" class="btn btn-sample2" style="background-color: #2779A8" href="/Home/Contact">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--Should be a carousel-->
+<div class="d-lg-none">
+    <img src="~/Content/Images/Home/Mobile/GeorgiaMagazine.jpg" alt="Simon Alebiosu & Georgia Lennard Beyond Balance" style="width: 100%; height: 100%;" />
+</div>
+
+<div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
+    <div class="carousel-inner topCarousel" role="listbox" style="height: 100% !important;">
+        
+        <div class="carousel-item active" style="height: auto;width:100%;">
+            <img class="d-block img-fluid img-responsive" src="~/Content/Images/Home/2560/GeorgiaDoublePics.jpg" alt="Georgia Lennard Thyroid Specialist" style="display: block !important; width: 100%;" />
+             <!--
+                    <div class="carousel-caption hover" id="carousel-button" style="z-Index: 100;" onclick="document.location.href='/Home/Contact'">
+                         <button type="button" onclick="document.location.href='/Home/Contact'" class="btn btn-sample2 text-center hover" style="margin: 10px auto; display:block; font-size: 18px;z-index: 1000;">Join Our Thyroid Mailing List</button>
+                  
+                   <div style="background-color: white;width: 440px; margin: 0 auto; padding-bottom:8px;">
+                     <h4 >Receive Thyroid Health Action Plan </h4>
+                     <button type="button" onclick="document.location.href='/Home/Contact'" class="btn btn-sample2 text-center hover" style="margin: 10px auto; display:block; font-size: 18px;z-index: 1000;">Join Our Thyroid Mailing List</button>
+                   </div>
+                  
+                </div>
+                --> 
+        </div>
+         
+        <div class="carousel-item" style="height: auto;width:100%;">
+            
+            <img class="d-block img-fluid img-responsive" src="~/Content/Images/Home/2560/SimonAndGeorgia.jpg" alt="Simon Alebiosu & Georgia Lennard Beyond Balance" style="display: block !important; width: 100%;" />
+            
+        </div>
+
+        
+        <div class="carousel-item" style="height: auto;width:100%; ">
+            <img class="d-block img-fluid GeorgiaHomeImage" src="~/Content/Images/Home/2560/Georgia.jpg" alt="Georgia Lennard Elite Personal Trainer" style="width: 100%;" />
+            <div id="GeorgiasQualifications" class="carousel-caption  d-md-block d-none">
+                <p class="carouselQualificationsName">Georgia Lennard </p>
+                <p>Nutritional Therapist (Special Interest: Thyroid)</p>
+                <p>BA Human Kinetics & Ergonomics</p>
+                <p>Advanced Physical Rehab Trainer</p>
+                <p>dipNT, mBANT, rCNHC</p>
+            </div>
+        </div>
+        <div class="carousel-item" style="height: auto;width:100%;">
+            <img class="d-block img-fluid " src="~/Content/Images/Home/2560/Simon.jpg" alt="Simon Alebiosu Elite Personal Trainer" style="width: 100%;">
+            <div id="SimonsQualifications" class="carousel-caption  d-md-block d-none">
+                <p class="carouselQualificationsName">Simon Alebiosu</p>
+                <p>Msc (strength and conditioning)</p>
+                <p>British and European Jui Jitsu Open Champion</p>
+                <p>Master Trainer</p>
+                <p>Advanced Functional Trainer</p>
+            </div>
+        </div>
+        <div class="carousel-item" style="height: auto;width:100%;">
+            <img class="d-block img-fluid" src="~/Content/Images/Home/2560/CookingTogether.jpg" alt="Georgia and Simon Cooking Together" style="width: 100%;">
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div style="padding-top: 0px; padding-bottom:12px;" class="d-lg-none">
+    <div class="row">
+        <div class="col-sm-6 no-gutters nopadding" style="padding-top: 8px; padding-bottom: 15px;">
+            <p style="padding: 0px 12px 0px 12px;text-align: center; font-size: 20px;margin-top: 18px;margin-bottom: 12px;">Georgia Lennard </p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">Nutritional Therapist (Special Interest: Thyroid)</p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">BA Human Kinetics & Ergonomics</p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">Advanced Physical Rehab Trainer</p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">dipNT, mBANT, rCNHC</p>
+        </div>
+        <div class="col-sm-6 hidden-md-up no-gutters" style="padding-top: 8px; padding-bottom: 15px;">
+            <p style="padding: 0px 12px 0px 12px; text-align: center;font-size: 20px;margin-top: 18px;margin-bottom: 12px;">Simon Alebiosu</p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">Msc (strength and conditioning)</p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">British and European Jui Jitsu Open Champion</p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">Master Trainer</p>
+            <p style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">Advanced Functional Trainer</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div style="width: 100%; border: 5px solid white; border-bottom: 12px solid white;">
+    <div class="container-fluid" style="width: 100%; height: 100%;">
+        <div class="row">
+            <div class="col-md-4 no-gutters nopadding  button-services" onclick="document.location.href='/Home/Training'">
+                EXERCISE
+            </div>
+            <div class="col-md-4 no-gutters nopadding button-services" onclick="document.location.href='/Home/Nutrition'">
+                NUTRITION
+            </div>
+            <div class="col-md-4 no-gutters nopadding button-services" onclick="document.location.href='/Home/PreHabRehab'">
+                STRESS MANAGEMENT
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="contentSection">
+    <div class="CenterAndRestrictWidth">
+        <h2 class="variable-padding">WHAT YOU NEED TO KNOW ABOUT YOUR THYROID</h2>
+
+        <p class="variable-padding">
+            Did you know that approximately 90% of people who have an underactive thyroid (hypothyroidism) actually have Hashimoto’s? It’s likely that many people in fact have Hashimoto’s but don’t actually know because it is not commonly tested for on standard thyroid panels.
+        </p>
+        <p class="variable-padding">Hashimoto’s is not a congenital problem with the thyroid gland itself but rather damage to the thyroid gland via the immune system which can lead to hypothyroidism.</p>
+        <p class="variable-padding">But did you know if Hashimoto’s is caught in time, it’s possible to halt the attack on the thyroid and prevent hypothyroidism and all the unpleasant symptoms that come with it?”</p>
+        <p class="variable-padding"></p>
+
+        <button type="button" onclick="document.location.href='/Home/Nutrition'" class="btn btn-sample2 text-center" style="margin: 40px auto; display:block; font-size: 18px;margin-top: 60px;">&nbsp;READ MORE&nbsp;</button>
+
+        <div class="container-fluid" >
+            <h3 class="variable-padding">Our recent feature published in the magazine: What Doctors Don't Tell You</h3>
+            <div class="d-none d-sm-block">
+                <div class="row" style="padding: 24px 0;">
+                
+                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="~/Content/Images/Home/ThyroidArticle/WWDTY THYROID PDF-page-001.jpg" alt="What Doctors Don't Tell You Article Page 1" />
+                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="~/Content/Images/Home/ThyroidArticle/WWDTY THYROID PDF-page-002.jpg" alt="What Doctors Don't Tell You Article Page 2" />
+                </div>
+            </div>
+
+            <div class="d-md-none">
+                <div  style="padding: 24px 0;">
+                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="~/Content/Images/Home/ThyroidArticle/WWDTY THYROID PDF-page-001.jpg" alt="What Doctors Don't Tell You Article Page 1" />
+                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="~/Content/Images/Home/ThyroidArticle/WWDTY THYROID PDF-page-002.jpg" alt="What Doctors Don't Tell You Article Page 2" />
+                </div>
+            </div>
+
+
+            <h3 class="variable-padding">WATCH THIS SPACE FOR MORE EXCITING NEWS COMING SOON!</h3>
+             <button type="button" onclick="document.location.href='/Home/Contact'" class="btn btn-sample2 text-center" style="margin: 20px auto; display:block; font-size: 18px;">Join Our Thyroid Mailing List</button>
+        </div>
+        
+    </div>
+</div>
+
+        <div class="contentSection grey-background">
+            <div class="CenterAndRestrictWidth">
+                <h2 class="variable-padding">Beyond Balance Core Restore Classes</h2>
+
+                <p class="variable-padding">The class is designed to restore strength and tone to the core muscles and re-shape the waist after having a baby. Your arms and legs will get toned up and strengthened as an added bonus.</p>
+                <p class="variable-padding">Babies and toddlers are welcome to join.</p>
+                <p class="variable-padding">All you need to bring is a bottle of water and yourself!</p>
+                <p class="variable-padding pb-2"><b>Classes are held every Tuesday. Winter term is only 5 classes for £75 : from 5 November until 3 December 2019 inclusive from 9.30AM until 10.15AM at <span id="SouthParkGardens" class="hoverEffect" style="text-decoration: underline;">South Park Gardens, Garden Room, SW19 8PN</span> and are £15 each.</b></p>
+                <h4 class="variable-padding pb-3 pt-4 text-center"><b>Get your Tickets Here</b></h4>
+               <!--<button type="button" id="CoreRestorePack" class="btn btn-sample2 text-center" style="margin: 0 auto; display:block;float: left; font-size: 18px;" >12 Classes</button>-->
+                <button type="button" id="CoreRestoreSingleClass" class="btn btn-sample2 text-center" style="margin: 20px auto; display:block; font-size: 18px;">&nbsp;&nbsp;5 Classes&nbsp;&nbsp;</button>
+                <p class="variable-padding pt-5 text-center">If you have any questions please don't hesitate to get in contact with us by phone at <a class="hoverEffect" href="tel:+44 (0)79 6157 1500">+44 (0)79 6157 1500</a> or email <a id="footerMailTo" style="text-decoration: underline;" href="mailto:info@beyondbalance.co.uk">info@beyondbalance.co.uk</a>.</a>
+            </div>
+
+        </div>
+
+
+
+
+        @section Scripts{
+            <script>
+                
+                $(window).on("load", function () {
+
+                    setTimeout(showPopUp, 8000);
+                });
+
+                function showPopUp() {
+                    $('#exampleModal').modal();
+                }
+                
+                $('#modal-yes').on('click', function(event) {
+                      window.location.href = "/Home/Contact";
+                });
+
+                $('#carousel-button').on('click', function(event) {
+                      window.location.href = "/Home/Contact";
+                });
+
+                $('#carousel').carousel({
+                    interval: 7500,
+                    pause: "null"
+                });
+
+                $('#testimonialsCarousel').carousel({
+                    interval: 10000,
+                    pause: "hover"
+                });
+
+                $("#LearnMoreMain").click(function () {
+                    $("#LearnMoreMain").toggle(250);
+                    $("#AboutUs").toggle(1200);
+                });
+
+                $("#TrainingLink").click(function () {
+                    window.location.href = "/Home/Training";
+                });
+
+                $("#PreHabReHabLink").click(function () {
+                    window.location.href = "/Home/PreHabRehab";
+                });
+
+                $("#NutritionLink").click(function () {
+                    window.location.href = "/Home/Nutrition";
+                });
+
+                $("#carouselExampleSlidesOnly").click(function () {
+                    window.location.href = "/Home/Testimonials";
+                });
+
+                $("#RecipesHeader").click(function () {
+                    window.location.href = "/Home/HealthyRecipes";
+                });
+
+
+                function sizeCarousel() {
+                    var width = $(window).width();
+                    var carouselHeight = width * 0.498;
+                    //$(".carousel").height(carouselHeight);
+                    $("#carousel").height(carouselHeight);
+                    $(".topCarousel").height(carouselHeight);
+                    $(".d-block").height(carouselHeight);
+                    //$(".carousel-inner").height(carouselHeight);
+                }
+
+                
+
+
+                $(document).ready(function () {
+                    sizeCarousel();
+                });
+
+                $(window).resize(function () {
+                    sizeCarousel();
+                });
+
+                // Firefox 1.0+
+                if (typeof InstallTrigger !== 'undefined') {
+                    //alert("we are using firefox");
+                    var elements = document.getElementsByTagName('img');
+                    for (var i = 0, len = elements.length; i < len; i++) { elements[i].removeAttribute('alt'); }
+                }
+
+                $("#CoreRestorePack").click(function () {
+                    window.open('https://pay.gocardless.com/AL00022SMQNEWB');
+                    return false;
+                });
+
+                $("#CoreRestoreSingleClass").click(function () {
+                    window.open('https://pay.gocardless.com/AL0002PJM9AZNZ');
+                    return false;
+                });
+
+                $("#SouthParkGardens").click(function () {
+                    window.open('https://www.google.co.uk/maps/place/Dudley+Rd,+London+SW19+8PN/');
+                    return false;
+                });
+
+
+
+            </script>
+        }
+
