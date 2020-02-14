@@ -1,0 +1,238 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+
+@* the fun starts here *@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Balance | @ViewBag.Title</title>
+    @RenderSection("MetaData", false)
+
+    <link rel="shortcut icon" href="~/Content/Images/SocialMedia/BBFlavicon.png" type="image/x-icon" />
+    <link rel="icon" href="~/Content/Images/SocialMedia/BBFlavicon.png" type="image/ico" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">*@
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+</head>
+<body>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg" style="padding-right: 0px;">
+        <a class="navbar-brand" href="/Home/index"><img src="~/Content/Images/General/logo.svg" /></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> &#9776;</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" style="font-family: 'Poppins' !important;">
+                    @Html.ActionLink("HOME", "", "Home", null, new { @class = "" })
+                </li>
+                <li class="dropdown">
+                    <a id="dropDownMenu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SERVICES&nbsp;</a>
+                    <ul class="dropdown-menu" id="dropDownMenuItems" style="font-family: 'Poppins' !important;">
+                        <li>@Html.ActionLink("TRAINING", "Training", "Home", null, new { @class = "" })</li>
+                        <li>@Html.ActionLink("STRESS", "PreHabRehab", "Home", null, new { @class = "" })</li>
+                        <li>@Html.ActionLink("NUTRITION", "Nutrition", "Home", null, new { @class = "" })</li>
+                    </ul>
+                </li>
+                <li class="nav-item" style="font-family: 'Poppins' !important;">
+                    @Html.ActionLink("CORPORATE", "CorporateWellness", "Home", null, new { @class = "" })
+                </li>
+                <li class="nav-item" style="font-family: 'Poppins' !important;">
+                    @Html.ActionLink("TESTIMONIALS", "Testimonials", "Home", null, new { @class = "" })
+                </li>
+                <li class="nav-item" style="font-family: 'Poppins' !important;">
+                    @Html.ActionLink("HEALTHY RECIPES", "HealthyRecipes", "Home", null, new { @class = "" })
+                </li>
+                <li class="nav-item" style="font-family: 'Poppins' !important;">
+                    @Html.ActionLink("CONTACT", "Contact", "Home", null, new { @class = "" })
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="MenuExpander"></div>
+
+
+
+    @RenderBody()
+
+
+    <div class="footer">
+        <div class="CenterAndRestrictWidth footerContainer">
+
+            <div class="float-left  d-none d-md-block ">
+                <div><a href="" onclick="openInNewTab('/Home/PrivacyPolicy')" class="privacy-policy">Privacy Policy</a></div>
+                <div><a href="//bendando.com" class="hoverEffect">&copy;Bendando</a></div>
+            </div>
+            @*<div class="privacy-policy" style="display: block; background-color: green;"><a onclick="openInNewTab('/Home/PrivacyPolicy')" ;>Privacy Policy</a></div>
+        </div>*@
+            <div class="float-md-right SocialMediaIcons" style="">
+
+                <img id="facebook" class="hoverEffect" src="~/Content/Images/SocialMedia/New/facebook.png" style="padding:5px;width: 39px; height: 39px;" />
+                <img id="instagram" class="hoverEffect" src="~/Content/Images/SocialMedia/New/Instagram.png" style="padding:5px;width: 39px; height: 39px;" />
+
+            </div>
+            <div class="float-md-right contactInfo">
+                <div style="font-weight:bold;">Contact</div>
+                <div><a id="footerMailTo" href="mailto:info@beyondbalance.co.uk">info@beyondbalance.co.uk</a></div>
+                <div>Phone: <a class="hoverEffect" href="tel:+44 (0)79 6157 1500">+44 (0)79 6157 1500</a></div>
+            </div>
+
+            <div class="text-center d-md-none hoverEffect" style="padding-top: 15px;"><a href="" onclick="openInNewTab('/Home/PrivacyPolicy')" class="privacy-policy">Privacy Policy</a></div>
+            <div class="text-center d-md-none hoverEffect" ><a href="//bendando.com">&copy;Bendando</a></div>
+        </div>
+
+    </div>
+
+
+
+
+
+    @*
+
+        <div class="CenterAndRestrictWidth" id="footerDiv">
+            <div class="float-left">&copy;Bendando<div>
+             <div class="float-right">&copy;Bendando<div>*@
+    @*<div class="float-left">Contact</div>
+                <div class="float-left"><a id="footerMailTo" href="mailto:info@beyondbalance.co.uk">info@beyondbalance.co.uk</a></div>
+                <div class="float-left" style="font-size: 18px; color: black;">+44 (0)79 6157 1500</div>
+                <div class="float-left">
+                    <img src="~/Content/Images/SocialMedia/New/Instagram.png" />
+                    <img src="~/Content/Images/SocialMedia/New/LinkedIn.png" />
+                </div>
+            </div>
+        </div>*@
+    @*</div>
+        </div>*@
+    @*<div class="row no-gutters CenterAndRestrictWidth" id="footerDiv">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div id="SocialMediaIcons">
+                <div id="IconsContainer">
+                    <img id="facebook" class="SocialMediaIcon" alt="beyond balance facebook" src="~/Content/Images/SocialMedia/facebook.png" height="45" width="45" />
+                    <img id="instagram" class="SocialMediaIcon" alt="beyond balance instagram" src="~/Content/Images/SocialMedia/instagram.png" height="45" width="45" />
+                    <img id="twitter" class="SocialMediaIcon" alt="beyond balance twitter" src="~/Content/Images/SocialMedia/twitter.png" height="45" width="45" />
+                </div>
+                <div id="FooterContactInfo">
+                    <div><a id="footerMailTo" href="mailto:info@beyondbalance.co.uk">info@beyondbalance.co.uk</a></div>
+                    <div class="" style="font-size: 18px; color: black;">+44 (0)79 6157 1500</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 hidden-sm-down">
+            <img src="~/Content/Images/SocialMedia/BeyondBalance_small.png" width="180" height="180" style="display: block; margin: 0 auto; margin-top: 30px;" />
+        </div>
+
+
+        <div class="col-md-4 col-sm-6 col-xs-12 contentSection bbClassesDiv">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="WAHAJ9WUVYD4N">
+                <table style="width: 260px; margin: 0 auto;">
+                    <tr><td><input type="hidden" name="on0" value="CORE RESTORE CLASSES"><p style="text-align:center; padding: 0px; margin-bottom: 0.5rem;padding-top: 12px;font-size:21px;">CORE RESTORE CLASSES</p></td></tr>
+                    <tr>
+                        <td>
+                            <select name="os0" style="width: 260px;">
+                                <option value="Drop-in">Drop-in £14</option>
+                                <option value="Pack of 10 Classes">Pack of 10 Classes £124</option>
+                                <option value="Pack of 20 Classes">Pack of 20 Classes £200</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <input type="hidden" name="currency_code" value="GBP">
+                <input type="image" style="width: 180px; margin: 0 auto; display: block;padding: 20px;" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                @*<img alt="" border="0"  style="padding: 15px;"src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">*@
+    @*</form>*@
+    @*</div>*@
+
+
+
+
+
+    @*</div>
+            <div id="bendandoInfo">Built by Bendando</div>
+        </div>*@
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script>
+        if (typeof jQuery == 'undefined') { document.write(unescape("%3Cscript src='Scripts/jquery-3.2.1.min.js' type='text/javascript'%3E%3C/script%3E")); }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" crossorigin="anonymous"></script>*@
+
+    <script>
+        $("#facebook").click(function () {
+            window.open('https://www.facebook.com//beyondbalanceBB/');
+        });
+        $("#instagram").click(function () {
+            window.open('https://www.instagram.com/beyondbalance/');
+        });
+        $("#twitter").click(function () {
+            window.open('https://twitter.com/beyondbalanceUK');
+        });
+
+        function openInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+
+
+        $(document).ready(function () {
+
+            $(window).resize(function () {
+                if ($(window).width() < 992) {
+                    $('#MenuExpander').css("display", "none");
+                }
+                else {
+                    if ($("#dropDownMenuItems").is(":visible")) $('#MenuExpander').css("display", "block");
+                }
+            });
+
+            $('#dropDownMenu').click(function (e) {
+                var canSee = $("#dropDownMenuItems").is(":visible");
+                var windowWidth = $(window).width();
+                if (windowWidth >= 992) {
+                    if (!canSee) { //was closed
+                        $('#MenuExpander').css("display", "block");
+                    }
+                    else {
+                        $('#MenuExpander').css("display", "none");
+                    }
+                }
+            });
+
+
+
+        });
+    </script>
+
+
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>
+
