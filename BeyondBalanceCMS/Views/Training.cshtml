@@ -1,0 +1,102 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Training>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+@{
+    ViewBag.Title = "Training";
+}
+
+@section MetaData{
+    <meta name="description" content="Our structured, smart training allows you to optimise your health and stay injury free." />
+}
+
+<div class="d-lg-none">
+    <img src="~/Content/Images/Training/Mobile/SimonTraining.jpg" alt="Simon Alebiosu Training" style="width: 100%; height: 100%;" />
+</div>
+
+
+
+
+<div class="nopadding d-none d-lg-block" style="width: 100%; border: 0px !important;">
+        <video id="video" class="nopadding hidden-sm-down" controls="controls" alt="Beyond Balance training video" autoplay="autoplay" poster="~/Content/Video/BackgroundImage.jpg" style="bottom:0; height: auto; position: absolute;height: 85vh;border: 0;">
+            <source src="~/Content/Video/BBIntro_Compressed.mp4" type="video/mp4" />
+            <source src="~/Content/Video/BBIntro.webm" type="video/webm" />
+        </video>
+</div>
+@*<img src="" />
+<div id="postVideoImage" class="nopadding" style="display: none;">
+    <img src="~/Content/Video/VideoBackground.jpg" style="width: 100%; height: 100%;"/></div>*@
+
+<div class="pageCaption">
+    <h3 class="CenterAndRestrictWidth">Our structured, smart training allows you to optimise your health and stay injury free.
+ We are passionate about seeing clients getting incredible results and enjoy being part of each person's journey.</h3>
+</div>
+    @*<h3 class="pageCaption">Our structured, smart training allows you to optimise your health and stay injury free.
+ We are passionate about seeing clients getting incredible results and enjoy being part of each person's journey.</h3>*@
+
+
+<div class="contentSection">
+    <h2>Training</h2>
+    <ol style="font-size:20px; margin-bottom: 0px;">
+        <li style="text-align: center; padding-bottom: 8px;">Exercise prescription is based on your personality, body type and current lifestyle.</li>
+        <li style="text-align: center; padding-bottom: 16px;">You will feel better, move better and become leaner.</li>
+    </ol>
+    <div class="CenterAndRestrictWidth nopadding row">
+        <div class="col-md-6 nopadding" style="padding: 24px;padding-bottom:0px;">
+            <img src="~/Content/Images/Training/GeorgiaTrainingEmma.jpg" style="width:100%; height: auto;padding: 23px; padding-bottom:0px;" />
+        </div>
+        <div class="col-md-6 nopadding" style="padding: 24px;padding-bottom:0px;">
+            <img src="~/Content/Images/Training/SimonTrainingBen.jpg" style="width:100%; height: auto;padding: 23px; padding-bottom:0px;" />
+        </div>
+    </div>
+</div>
+
+<div style="padding-bottom: 1em;" class="contentSection YourExperience">
+    <div class="CenterAndRestrictWidth">
+        <h2 style="text-align: center; display: block; margin: 0 auto;">Your Experience</h2>
+        <div class="row">
+            <div class="col-md-6 no-gutters">
+                <p style="padding-left: 36px; padding-right: 36px;">Your weights at the gym begin to increase drastically and you no longer have those painful niggles in your shoulders and back. Your friends are left wondering where you get your motivation from as when you cycle home from work you feel as if you have a new pair of legs. </p>
+            </div>
+            <div class="col-md-6 no-gutters">
+                <p style="padding-left: 36px; padding-right: 36px;">We have been through this process with countless clients. It’s simply a case of small but specific changes having a profound positive effect. We want to empower you so that you understand why your back hurts, why running is/is not right for your body type and how to fix it.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+var myVideo=document.getElementById("video");
+var postVidPic = document.getElementById("postVideoImage");
+var hasFinished = false;
+
+//function playPause() {
+//    if (hasFinished == false) {
+//        if (myVideo.paused)
+//            myVideo.play();
+//        else
+//            myVideo.pause();
+//    }
+//}
+
+
+
+//myVideo.onended = function () {
+   // video.setAttribute("controls", "controls");
+   // hasFinished = true;
+    //var height = $(myVideo).height();
+    //var width = $(myVideo).width();
+    //$(myVideo).css("display", "none");
+    //$(postVidPic).css("display", "block");
+    //$(postVidPic).css("width", width+"px" );
+    //$(postVidPic).css("height", height+"px");
+    //var postVidPic = do
+    //alert("The video has ended" + height + " " + width);
+//};
+
+</script>
+}

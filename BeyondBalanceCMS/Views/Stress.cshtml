@@ -1,0 +1,142 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Stress>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "PreHabRehab";
+}
+
+@section MetaData{
+    <meta name="description" content="Through working with a vast number of clients we have developed a unique approach to rehabilitation." />
+}
+
+<img src="~/Content/Images/PreHabRehab/Mobile/SimonPressingGeorgiasNeck.jpg" width="100%" class="d-lg-none" alt="Beyond Balance rehabilitation" />
+
+
+
+
+<div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
+
+    <div class="carousel-inner topCarousel" role="listbox">
+
+        @*<div class="carousel-item active" style="height: auto;width:100%;">
+                <img class="d-block img-fluid SimonRehab1" alt="Simon Alebiosu Rehabilitation Ben Roberts" />
+            </div>
+            <div class="carousel-item" style="height: auto;width:100%;">
+                 <img class="d-block img-fluid GeorgiaRehab1" alt="Georgia Lennard Rehabilitation Emma Cullen">
+            </div>
+            <div class="carousel-item " style="height: auto;width:100%;">
+                 <img class="d-block img-fluid SimonRehab2" alt="Simon Alebiosu Rehabilitation of Woman">
+            </div>*@
+
+        <div class="carousel-item active" style="height: auto;width:100%;">
+            <img class="d-block img-fluid" src="~/Content/Images/PreHabRehab/SiPressingGeorgiasShoulders.jpg" alt="Simon Alebiosu Rehabilitation Georgia Lennard" style="width:100%;" />
+            @*<img class="d-block img-fluid SimonPressingGeorgiasShoulders" alt="Simon Alebiosu Rehabilitation Georgia Lennard" />*@
+        </div>
+        <div class="carousel-item" style="height: auto;width:100%;">
+            <img class="d-block img-fluid" src="~/Content/images/PreHabRehab/SiBandWorkSam.jpg" alt="Simon Alebiosu Rehabilitation Sam" style="width:100%;">
+        </div>
+        <div class="carousel-item " style="height: auto;width:100%;">
+            <img class="d-block img-fluid" src="~/Content/images/PreHabRehab/SimonStretching.jpg" alt="Simon Alebiosu Rehabilitation Stretching" style="width:100%;">
+        </div>
+        <div class="carousel-item" style="height: auto;width:100%;">
+            <img class="d-block img-fluid" src="~/Content/images/PreHabRehab/SimonBandWorkBen.jpg" alt="Simon Alebiosu Rehabilitation Ben Roberts" style="width:100%;">
+        </div>
+        <div class="carousel-item " style="height: auto;width:100%;">
+            <img class="d-block img-fluid " src="~/Content/images/PreHabRehab/GeorgiaTrainingEmma.jpg" alt="Georgia Lennard Rehabilitation Emma Cullen" style="width:100%;">
+        </div>
+
+    </div>
+</div>
+
+
+<div style="padding-bottom: 1em;" class="contentSection YourExperience">
+        <div class="CenterAndRestrictWidth">
+            <h2 style="text-align: center; display: block; margin: 0 auto;padding-top: 36px;">Stress. Friend or foe?</h2>
+            <p style="padding-left: 24px; padding-right: 24px;">A bit of stress is a good thing. It gets us up in the morning and gives us our drive. However too much stress is a problem. Especially when it is chronic. And that’s the thing, stress isn’t going away so we must find ways to manage it and in the process we become more resilient. Chronic stress leads to a higher risk of injury, increased inflammation and stiffness in the body. We see clients who present with random aches and pains when they are really stressed out or busy at work. The pain may feel like an injury to the client, but in fact it’s just extreme muscle tension and inflammation due to stress. The pain can easily be sorted out with the correct stretching and training patterns for that individual. </p>
+
+             @*<div class="row">
+                <div class="col-md-6 no-gutters">
+                     <p style="padding-left: 36px; padding-right: 36px;padding-bottom: 24px;margin-bottom: 0px;">Your trainer, who specializes in physical rehabilitation, explained that your right hamstring was too tight, your left glute medius wasn’t working and your left abdominal had wasted away due to overuse of your right side or sitting slightly sub optimally at work for years on end. </p>
+                </div>
+                <div class="col-md-6 no-gutters">
+                    <p style="padding-left: 36px; padding-right: 36px; padding-bottom: 24px; margin-bottom: 0px;"> As part of the process, you were referred to a renowned osteopath who realigned and loosened a few key areas.</p>
+                    <p style="padding-left: 36px; padding-right: 36px; padding-bottom: 24px; margin-bottom: 0px;">This meant you were able to get results from your training faster. If someone had told you it would have been this simple, you would have made these changes years ago!</p>
+                </div>
+            </div>*@
+        </div>
+    </div>
+
+
+<div class="CenterAndRestrictWidth nopadding row">
+    <div class="col-md-6 nopadding">
+        <div class="contentSection">
+            <h2 style="padding-left: 24px; padding-right: 24px;">Rehabilitation </h2>
+            <p style="padding-left: 24px; padding-right: 24px;">Through working with a vast number of clients we have developed a unique approach to rehabilitation.  Our aim is to restore balance to the body's system and allow you to become injury/pain free.</p>
+            <p style="padding-left: 24px; padding-right: 24px;">Our method allows clients to recover fully and surpass levels of strength and fitness previously held.</p>
+        </div>
+    </div>
+    <div class="col-md-6 nopadding">
+        <div class="contentSection">
+            <h2 style="padding-left: 24px; padding-right: 24px;">Injury Prevention</h2>
+            <p style="padding-left: 24px; padding-right: 24px;">We identify faulty movement patterns and weak links in the body and correct them before an injury occurs. Essentially this is injury prevention meaning you don’t have to take time out from doing the things you love.</p>
+            <p style="padding-left: 24px; padding-right: 24px;">By working ‘pre-hab’ into your training sessions, we ensure that you can give your best, be your strongest and avoid the aches and pains that so many people accept as part of everyday life.</p>
+            @*<p style="padding-left: 24px; padding-right: 24px;">We identifying weak links in the body and/or faulty movement patterns and correct them <b>before</b> an injury occurs. Essentially this is injury prevention meaning you don’t have to take time out doing the things you love.</p>
+                <p style="padding-left: 24px; padding-right: 24px;">By working ‘pre-hab’ sessions into your training routine, we ensure that you can give your best, be your strongest and avoid the aches and pains that so many people accept as part of everyday life.    </p>*@
+        </div>
+    </div>
+</div>
+
+
+
+@*<div style="padding-bottom: 1em;" class="contentSection YourExperience">
+        <div class="CenterAndRestrictWidth">
+            <h2 style="text-align: center; display: block; margin: 0 auto;">Your Experience</h2>
+            <p style="padding-left: 36px; padding-right: 36px; padding-top: 18px;font-size: 23px !important; text-align: center; line-height: 1.5;">The back pain you have had for years is substantially better after one session and has disappeared altogether after 8 sessions.</p>
+
+             <div class="row">
+                <div class="col-md-6 no-gutters">
+                     <p style="padding-left: 36px; padding-right: 36px;padding-bottom: 24px;margin-bottom: 0px;">Your trainer, who specializes in physical rehabilitation, explained that your right hamstring was too tight, your left glute medius wasn’t working and your left abdominal had wasted away due to overuse of your right side or sitting slightly sub optimally at work for years on end. </p>
+                </div>
+                <div class="col-md-6 no-gutters">
+                    <p style="padding-left: 36px; padding-right: 36px; padding-bottom: 24px; margin-bottom: 0px;"> As part of the process, you were referred to a renowned osteopath who realigned and loosened a few key areas.</p>
+                    <p style="padding-left: 36px; padding-right: 36px; padding-bottom: 24px; margin-bottom: 0px;">This meant you were able to get results from your training faster. If someone had told you it would have been this simple, you would have made these changes years ago!</p>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+@section Scripts{
+    <script>
+        $('#carousel').carousel({
+            interval: 7500,
+            pause: "null"
+        });
+
+
+        function sizeCarousel() {
+            var width = $(window).width();
+            var carouselHeight = width * 0.498;
+            //$(".carousel").height(carouselHeight);
+            $("#carousel").height(carouselHeight);
+            $(".topCarousel").height(carouselHeight);
+            $(".d-block").height(carouselHeight);
+            //$(".carousel-inner").height(carouselHeight);
+        }
+
+        $(document).ready(function () {
+            sizeCarousel();
+        });
+
+        $(window).resize(function () {
+            sizeCarousel();
+        });
+
+    </script>
+}
+
+

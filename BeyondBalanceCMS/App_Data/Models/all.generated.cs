@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4cabe5877602951")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e9780b41390b9f9c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -42,7 +42,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>HomePage</summary>
 	[PublishedContentModel("homePage")]
-	public partial class HomePage : PublishedContentModel
+	public partial class HomePage : PublishedContentModel, ITitleSeo
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "homePage";
@@ -66,21 +66,214 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Description Metadata: The  text that will in search engines
+		/// Description Metadata: Text used by search engines to index pages
 		///</summary>
 		[ImplementPropertyType("descriptionMetadata")]
 		public string DescriptionMetadata
 		{
-			get { return this.GetPropertyValue<string>("descriptionMetadata"); }
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
 		}
 
 		///<summary>
-		/// Page Title: Appears on browser bar
+		/// Page Title: Title that appears on Browser bar
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
 		{
-			get { return this.GetPropertyValue<string>("pageTitle"); }
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
+		}
+	}
+
+	// Mixin content Type 1068 with alias "titleSEO"
+	/// <summary>_Title&SEO</summary>
+	public partial interface ITitleSeo : IPublishedContent
+	{
+		/// <summary>Description Metadata</summary>
+		string DescriptionMetadata { get; }
+
+		/// <summary>Page Title</summary>
+		string PageTitle { get; }
+	}
+
+	/// <summary>_Title&SEO</summary>
+	[PublishedContentModel("titleSEO")]
+	public partial class TitleSeo : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "titleSEO";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public TitleSeo(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TitleSeo, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return GetDescriptionMetadata(this); }
+		}
+
+		/// <summary>Static getter for Description Metadata</summary>
+		public static string GetDescriptionMetadata(ITitleSeo that) { return that.GetPropertyValue<string>("descriptionMetadata"); }
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return GetPageTitle(this); }
+		}
+
+		/// <summary>Static getter for Page Title</summary>
+		public static string GetPageTitle(ITitleSeo that) { return that.GetPropertyValue<string>("pageTitle"); }
+	}
+
+	/// <summary>Training</summary>
+	[PublishedContentModel("training")]
+	public partial class Training : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "training";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Training(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Training, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
+		}
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
+		}
+	}
+
+	/// <summary>Stress</summary>
+	[PublishedContentModel("stress")]
+	public partial class Stress : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "stress";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Stress(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Stress, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
+		}
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
+		}
+	}
+
+	/// <summary>Corporate</summary>
+	[PublishedContentModel("corporate")]
+	public partial class Corporate : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "corporate";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Corporate(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Corporate, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
+		}
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
 		}
 	}
 
