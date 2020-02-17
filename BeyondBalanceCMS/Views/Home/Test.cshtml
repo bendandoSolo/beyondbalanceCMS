@@ -1,0 +1,23 @@
+﻿
+@{
+    BeyondBalance.Models.BothRecipesWithSides objmodel = BeyondBalanceCMS.Providers.LatestHealthyRecipes.getLatestTwoRecipes();
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test Page</title>
+</head>
+<body>
+    <div>
+        <h1>Contact Page Test loading partial view</h1>
+        <div style="background-color: #ffd800; height: 100px; width: 200px">
+            @Html.Partial("_TestPartial")
+            @Html.Partial("_TestEmail")
+            @Html.Partial("_LatestHealthyRecipes", objmodel)
+        </div>
+    </div>
+</body>
+</html>

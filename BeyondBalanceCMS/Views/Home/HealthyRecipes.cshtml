@@ -1,0 +1,161 @@
+﻿@model BeyondBalance.Models.BothRecipesWithSides
+@{
+    ViewBag.Title = "Healthy Recipes";
+}
+
+<div class="row"> 
+    <div class="col-md-6 mainMeals nopadding" id="mainMeals" >
+        <h3 style="text-align:center; padding-bottom: 50px; padding-top: 50px; font-size: 34px; background-color:  #444444; color: white !important;">Main Meals</h3>
+           @{
+           int i = 0;
+        foreach (var item in Model.rssCollection){
+                   string idstring = "MealDiv" + i.ToString();
+            <div class="HealthyRecipeSummary" id="@idstring" style="background-color: white;" >
+                <p style="color: #444444; font-size: 22px; font-weight: bold; margin-bottom: 0px;" >@item.Title</p>
+                @{
+                    string categoryString = "";
+                    foreach (var category in @item.CategoryStrings){
+                        if (category == "dinner"){
+                            if (categoryString == "") { categoryString = categoryString + "DINNER"; }
+                            else { categoryString = categoryString + " & DINNER"; }
+                        }
+                        if (category == "lunch"){
+                            if (categoryString == "") { categoryString = categoryString + "LUNCH"; }
+                            else { categoryString = categoryString + " & LUNCH"; }
+                        }
+                        if (category == "breakfast"){
+                            if (categoryString == "") { categoryString = categoryString + "BREAKFAST"; }
+                            else { categoryString = categoryString + " & BREAKFAST"; }
+                        }
+                    }
+                    <p class="meal-category">(@categoryString)</p>
+                }
+
+
+                <div id="hideoverflow">
+                    <div id="outer">
+                        <div id="inner">
+                            <img src="@item.PictureSRC" class="center-block" style="width:auto;height:200px;" />
+                        </div>
+                    </div>
+                </div>
+
+                    <div style="padding: 24px;">
+                        <button type="button" id="LearnMoreMain" class="btn btn-sample3 text-center" style="margin: 0 auto; display:block;" onclick="location.href='@Url.Action("MainMeals", "Home",new { id = i+@ViewBag.MealsPage*4 })'">Read More</button>
+                    </div>
+                 </div>
+                   i++;
+               }
+            }
+        <div style="text-align:center; padding-bottom: 50px; padding-top: 50px;  background-color:#444444;">
+            <div style="margin: 0 auto;">
+                <img style="padding-right: 40px;" class="arrowButton" src="~/Content/Images/HealthyRecipies/Up.png" onclick="location.href='@Url.Action("HealthyRecipes", "Home",new { MealsPage = ViewBag.MealsPage-1, SnacksPage = ViewBag.SnacksPage })'"/>
+              
+                <img style="padding-left: 40px;" class="arrowButton" src="~/Content/Images/HealthyRecipies/down.png" onclick="location.href='@Url.Action("HealthyRecipes", "Home",new { MealsPage = ViewBag.MealsPage+1, SnacksPage = ViewBag.SnacksPage })'"/>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 nopadding" id="otherMeals" >
+        <h3 style="text-align:center; padding-bottom: 50px; padding-top: 50px; font-size: 34px; color: white !important; background-color: #2779A8;">Sides and Desserts</h3>
+        
+        @{ 
+            int j = 0;
+            foreach (var item in Model.rssCollection2)
+            {
+                string idstring = "SnackDiv" + j.ToString();
+            <div class="HealthyRecipeSummary"  id="@idstring" >
+                <p style="color: #2779A8; font-size: 22px; font-weight: bold; margin-bottom: 0px;">@item.Title</p>
+
+                @{
+                    string categoryString = "";
+                    foreach (var category in @item.CategoryStrings)
+                    {
+                        if (category == "sides")
+                        {
+                            if (categoryString == "") { categoryString = categoryString + "SIDE"; }
+                            else { categoryString = categoryString + " & SIDE"; }
+                        }
+                        if (category == "dessert" || category == "desserts")
+                        {
+                            if (categoryString == "") { categoryString = categoryString + "DESSERT"; }
+                            else { categoryString = categoryString + " & DESSERT"; }
+                        }
+                    }
+                    <p class="meal-category">(@categoryString)</p>
+                }
+                @*<div style="height: 250px; width: auto; margin: 0 auto; margin-top:30px; margin-bottom:15px;">
+                    <img src="@item.PictureSRC" class="center-block" style="width:auto;height:250px; border: 3px solid #e76d89;" />
+                </div>*@
+
+                <div id="hideoverflow">
+                    <div id="outer">
+                        <div id="inner">
+                            <img src="@item.PictureSRC" class="center-block" style="width:auto;height:200px;" />
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div style="padding: 24px;">
+                    <button type="button" id="LearnMoreMain" class="btn btn-sample2 text-center" style="margin: 0 auto; display:block;" onclick="location.href='@Url.Action("BreakfastsAndSides", "Home",new { id = j+@ViewBag.SnacksPage*4 })'">Read More</button>
+                </div>
+                @*<p style="color: #000000; font-size: 16px;">@String.Format("Published: {0:ddd, MMM d, yyyy}", @item.PublishDate)</p>*@
+            </div>
+            j++;
+            }
+
+
+        }
+        <div style="text-align:center; padding-bottom: 50px; padding-top: 50px;  background-color:#2779A8;">
+            <div style="margin: 0 auto;">
+                <img style="padding-right: 40px;" class="arrowButton" src="~/Content/Images/HealthyRecipies/Up.png" onclick="location.href='@Url.Action("HealthyRecipes", "Home",new { MealsPage = ViewBag.MealsPage, SnacksPage = ViewBag.SnacksPage-1 })'"/>
+
+                <img style="padding-left: 40px;" class="arrowButton" src="~/Content/Images/HealthyRecipies/down.png" onclick="location.href='@Url.Action("HealthyRecipes", "Home",new { MealsPage = ViewBag.MealsPage, SnacksPage = ViewBag.SnacksPage+1 })'"/>
+            </div>
+
+        </div>
+</div>
+
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            resizeDivs();
+        });
+
+        $(window).resize(function () {
+            setTimeout(function () {
+                resizeDivs();
+            }, 150);
+        });
+
+        function resizeDivs() {
+            if ($(window).width() > 767) {
+                for (var i = 0; i < 4; i++) {
+                    var mealsDiv = "#MealDiv" + i;
+                    var snackDiv = "#SnackDiv" + i;
+                    var mealsHeight = $(mealsDiv).height();
+                    var snackHeight = $(snackDiv).height();
+                    if (mealsHeight != snackHeight) {
+                        if (mealsHeight > snackHeight) {
+                            var difference = mealsHeight - snackHeight;
+                            $("#SnackDiv" + i + " .meal-category").css("padding-bottom", difference + "px");
+                        }
+                        else {
+                            var difference = snackHeight - mealsHeight;
+                            $("#MealDiv" + i + " .meal-category").css("padding-bottom", difference + "px");
+                        }
+                    }
+                }
+            }
+        }
+
+      
+    </script>
+}
