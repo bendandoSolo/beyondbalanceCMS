@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e9780b41390b9f9c")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7c405e057b6fe0fe")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
 
 
 // FILE: models.generated.cs
@@ -254,6 +254,50 @@ namespace Umbraco.Web.PublishedContentModels
 #pragma warning restore 0109
 
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Corporate, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
+		}
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
+		}
+	}
+
+	/// <summary>Nutrition</summary>
+	[PublishedContentModel("nutrition")]
+	public partial class Nutrition : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "nutrition";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Nutrition(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Nutrition, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
