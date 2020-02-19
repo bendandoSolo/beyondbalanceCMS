@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7c405e057b6fe0fe")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a54894f74885ed75")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -282,6 +282,103 @@ namespace Umbraco.Web.PublishedContentModels
 #pragma warning restore 0109
 
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Nutrition, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
+		}
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
+		}
+	}
+
+	/// <summary>Testimonial Item</summary>
+	[PublishedContentModel("testimonials")]
+	public partial class Testimonials : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "testimonials";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Testimonials(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Testimonials, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Client Name
+		///</summary>
+		[ImplementPropertyType("clientName")]
+		public string ClientName
+		{
+			get { return this.GetPropertyValue<string>("clientName"); }
+		}
+
+		///<summary>
+		/// Read More Text
+		///</summary>
+		[ImplementPropertyType("readMoreText")]
+		public string ReadMoreText
+		{
+			get { return this.GetPropertyValue<string>("readMoreText"); }
+		}
+
+		///<summary>
+		/// Short Text
+		///</summary>
+		[ImplementPropertyType("shortText")]
+		public string ShortText
+		{
+			get { return this.GetPropertyValue<string>("shortText"); }
+		}
+	}
+
+	/// <summary>Testimonials</summary>
+	[PublishedContentModel("testimonialsPage")]
+	public partial class TestimonialsPage : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "testimonialsPage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public TestimonialsPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TestimonialsPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
