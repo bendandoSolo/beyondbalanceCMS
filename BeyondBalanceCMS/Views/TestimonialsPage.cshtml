@@ -1,24 +1,68 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.TestimonialsPage>
-
-
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "Master.cshtml";
 }
 
 
-<h1>This is the page for testimonials</h1>
 @{
 	var selection = Model.Content.Site().FirstChild("testimonialsPage").Children("testimonialsItem")
 						.Where(x => x.IsVisible())
 						.OrderBy("CreateDate");
+    var index = 0;
 }
-<ul>
+
+
+
 	@foreach(var item in selection){
-		<li>
-			<a href="@item.Url">@item.Name</a>
-			<div>@item.GetPropertyValue("clientName").ToString()</div>
-		</li>
+       string btnName = item.Name+"btn";
+       index = index + 1;
+       var backColor =  "#FFFFFF";
+       if (index % 2 == 1 ){
+       backColor = "#FAFAFA";
+       } 
+        
+    
+<div style="background-color: @backColor; border-top: 1px solid #C6C6C6">
+    <div class="testimonial">
+        <div class="row no-gutters">
+            <div class="col-1 nopadding">
+                <p class="quoteMark " style="text-align: right;">“</p>
+            </div>
+            <div class="col-10">
+                <p class=@item.Name>@item.GetPropertyValue("additionalText").ToString()</p>
+                @{ if (@item.GetPropertyValue("moreAdditionalText") != null)
+                {
+                     <p class=@item.Name>@item.GetPropertyValue("moreAdditionalText").ToString()</p>
+                }}
+                <p id=@item.Name style="display: block; font-weight: normal;">@item.GetPropertyValue("mainText").ToString()</p>
+                 @{ if (@item.GetPropertyValue("clientName") != null){
+                <h5>@item.GetPropertyValue("clientName").ToString()</h5>
+                }}
+                <button type="button" id=@btnName class="btn btn-secondary text-center" style="margin: 0 auto; display:block; margin-bottom: 10px;"><b>Read More</b></button>
+            </div>
+            <div class="col-1 nopadding">
+                <p class="quoteMark ">”</p>
+            </div>
+        </div>
+    </div>
+</div>
 	}
-</ul>
+<div style="width: 100%; height: 1px; background-color: #C6C6C6; padding-bottom: 7px;"></div>
+
+
+
+@section scripts {
+    <script type="text/javascript">
+        $("button").click(function() {
+            var buttonName = this.id;
+            var idClass = buttonName.substring(0, buttonName.length-3);
+            $("#"+idClass).toggle(250);
+            $("."+idClass).toggle(1200);
+            $("#"+buttonName).toggle(250);
+        });
+    </script>
+}
+
+
 

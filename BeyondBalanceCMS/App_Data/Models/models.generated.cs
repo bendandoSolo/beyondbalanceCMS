@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "386cfed0510e92e9")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.9")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "f70c19d5c4e1b440")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -331,7 +331,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Additional Text
+		/// Hidden Text
 		///</summary>
 		[ImplementPropertyType("additionalText")]
 		public string AdditionalText
@@ -355,6 +355,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string MainText
 		{
 			get { return this.GetPropertyValue<string>("mainText"); }
+		}
+
+		///<summary>
+		/// Hidden Second Paragragh
+		///</summary>
+		[ImplementPropertyType("moreAdditionalText")]
+		public string MoreAdditionalText
+		{
+			get { return this.GetPropertyValue<string>("moreAdditionalText"); }
 		}
 	}
 
