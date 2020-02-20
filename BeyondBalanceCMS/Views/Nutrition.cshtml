@@ -5,13 +5,12 @@
 	BeyondBalance.Models.BothRecipesWithSides objmodel = BeyondBalanceCMS.Providers.LatestHealthyRecipes.getLatestTwoRecipes();
 }
 
-
 @{
-    ViewBag.Title = "PreHabRehab";
+    ViewBag.Title = @Umbraco.Field("pageTitle");
 }
 
 @section MetaData{
-    <meta name="description" content="Through working with a vast number of clients we have developed a unique approach to rehabilitation." />
+    <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
 }
 
 

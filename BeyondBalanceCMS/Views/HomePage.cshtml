@@ -5,13 +5,12 @@
 }
 
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = @Umbraco.Field("pageTitle");
 }
 
 @section MetaData{
-    <meta name="description" content="Beyond Balance: Simon Alebiosu and Georgia Lennard Elite Personal Trainers." />
+    <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
 }
-
 
 
 <!-- Modal -->

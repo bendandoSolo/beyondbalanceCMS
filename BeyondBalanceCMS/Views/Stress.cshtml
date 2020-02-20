@@ -4,13 +4,12 @@
 	Layout = "Master.cshtml";
 }
 
-
 @{
-    ViewBag.Title = "PreHabRehab";
+    ViewBag.Title = @Umbraco.Field("pageTitle");
 }
 
 @section MetaData{
-    <meta name="description" content="Through working with a vast number of clients we have developed a unique approach to rehabilitation." />
+    <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
 }
 
 <img src="~/Content/Images/PreHabRehab/Mobile/SimonPressingGeorgiasNeck.jpg" width="100%" class="d-lg-none" alt="Beyond Balance rehabilitation" />

@@ -6,6 +6,15 @@
 
 
 @{
+    ViewBag.Title = @Umbraco.Field("pageTitle");
+}
+
+@section MetaData{
+    <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
+}
+
+
+@{
 	var selection = Model.Content.Site().FirstChild("testimonialsPage").Children("testimonialsItem")
 						.Where(x => x.IsVisible())
 						.OrderBy("CreateDate");
