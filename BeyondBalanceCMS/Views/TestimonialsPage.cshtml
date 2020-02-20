@@ -1,7 +1,24 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.TestimonialsPage>
+
+
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "Master.cshtml";
 }
 
-<h1>Testimonials Page Layout actually contains nothing...</h1>
+
+<h1>This is the page for testimonials</h1>
+@{
+	var selection = Model.Content.Site().FirstChild("testimonialsPage").Children("testimonialsItem")
+						.Where(x => x.IsVisible())
+						.OrderBy("CreateDate");
+}
+<ul>
+	@foreach(var item in selection){
+		<li>
+			<a href="@item.Url">@item.Name</a>
+			<div>@item.GetPropertyValue("clientName").ToString()</div>
+		</li>
+	}
+</ul>
+

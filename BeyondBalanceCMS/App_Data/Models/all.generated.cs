@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a54894f74885ed75")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "386cfed0510e92e9")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.9")]
 
 
 // FILE: models.generated.cs
@@ -321,16 +321,16 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>Testimonial Item</summary>
-	[PublishedContentModel("testimonials")]
-	public partial class Testimonials : PublishedContentModel
+	/// <summary>Testimonials Item</summary>
+	[PublishedContentModel("testimonialsItem")]
+	public partial class TestimonialsItem : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "testimonials";
+		public new const string ModelTypeAlias = "testimonialsItem";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Testimonials(IPublishedContent content)
+		public TestimonialsItem(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -341,9 +341,18 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Testimonials, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TestimonialsItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Additional Text
+		///</summary>
+		[ImplementPropertyType("additionalText")]
+		public string AdditionalText
+		{
+			get { return this.GetPropertyValue<string>("additionalText"); }
 		}
 
 		///<summary>
@@ -356,25 +365,16 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Read More Text
+		/// Main Text
 		///</summary>
-		[ImplementPropertyType("readMoreText")]
-		public string ReadMoreText
+		[ImplementPropertyType("mainText")]
+		public string MainText
 		{
-			get { return this.GetPropertyValue<string>("readMoreText"); }
-		}
-
-		///<summary>
-		/// Short Text
-		///</summary>
-		[ImplementPropertyType("shortText")]
-		public string ShortText
-		{
-			get { return this.GetPropertyValue<string>("shortText"); }
+			get { return this.GetPropertyValue<string>("mainText"); }
 		}
 	}
 
-	/// <summary>Testimonials</summary>
+	/// <summary>Testimonials Page</summary>
 	[PublishedContentModel("testimonialsPage")]
 	public partial class TestimonialsPage : PublishedContentModel, ITitleSeo
 	{
