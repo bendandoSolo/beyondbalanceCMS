@@ -16,7 +16,10 @@ project.lock.json
 .vs/
 
 
-
+/BeyondBalanceCMS/App_Data/TEMP/*
+BeyondBalanceCMS/App_Data/TEMP/*
+/App_Data/TEMP/*
+App_Data/TEMP/*
 
 # mstest test results
 TestResults

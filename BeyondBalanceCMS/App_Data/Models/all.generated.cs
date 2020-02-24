@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "f70c19d5c4e1b440")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1767438d3d207fcf")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
@@ -259,6 +259,114 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Area2 Column1 Picture
+		///</summary>
+		[ImplementPropertyType("area2Column1Picture")]
+		public IPublishedContent Area2Column1Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("area2Column1Picture"); }
+		}
+
+		///<summary>
+		/// Area2 Column1 Text Below Picture
+		///</summary>
+		[ImplementPropertyType("area2Column1TextBelowPicture")]
+		public IHtmlString Area2Column1TextBelowPicture
+		{
+			get { return this.GetPropertyValue<IHtmlString>("area2Column1TextBelowPicture"); }
+		}
+
+		///<summary>
+		/// Area2 Column1 Title
+		///</summary>
+		[ImplementPropertyType("area2Column1Title")]
+		public string Area2Column1Title
+		{
+			get { return this.GetPropertyValue<string>("area2Column1Title"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Picture
+		///</summary>
+		[ImplementPropertyType("area2Column2Picture")]
+		public IPublishedContent Area2Column2Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("area2Column2Picture"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Text Below Picture
+		///</summary>
+		[ImplementPropertyType("area2Column2TextBelowPicture")]
+		public IHtmlString Area2Column2TextBelowPicture
+		{
+			get { return this.GetPropertyValue<IHtmlString>("area2Column2TextBelowPicture"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Title
+		///</summary>
+		[ImplementPropertyType("area2Column2Title")]
+		public string Area2Column2Title
+		{
+			get { return this.GetPropertyValue<string>("area2Column2Title"); }
+		}
+
+		///<summary>
+		/// Banner Text
+		///</summary>
+		[ImplementPropertyType("bannerText")]
+		public string BannerText
+		{
+			get { return this.GetPropertyValue<string>("bannerText"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Content
+		///</summary>
+		[ImplementPropertyType("fullWidthContentArea1Content")]
+		public IHtmlString FullWidthContentArea1Content
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWidthContentArea1Content"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Main Content
+		///</summary>
+		[ImplementPropertyType("fullWidthContentArea1MainContent")]
+		public string FullWidthContentArea1MainContent
+		{
+			get { return this.GetPropertyValue<string>("fullWidthContentArea1MainContent"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthContentArea1Title")]
+		public string FullWidthContentArea1Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthContentArea1Title"); }
+		}
+
+		///<summary>
+		/// Main Desktop Image
+		///</summary>
+		[ImplementPropertyType("mainDesktopImage")]
+		public IPublishedContent MainDesktopImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("mainDesktopImage"); }
+		}
+
+		///<summary>
+		/// Main Mobile Image
+		///</summary>
+		[ImplementPropertyType("mainMobileImage")]
+		public IPublishedContent MainMobileImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("mainMobileImage"); }
+		}
+
+		///<summary>
 		/// Description Metadata: Text used by search engines to index pages
 		///</summary>
 		[ImplementPropertyType("descriptionMetadata")]
@@ -424,6 +532,41 @@ namespace Umbraco.Web.PublishedContentModels
 		public string PageTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
+		}
+	}
+
+	/// <summary>_Banner</summary>
+	[PublishedContentModel("banner")]
+	public partial class Banner : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "banner";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Banner(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Banner, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Banner Text
+		///</summary>
+		[ImplementPropertyType("text")]
+		public string Text
+		{
+			get { return this.GetPropertyValue<string>("text"); }
 		}
 	}
 
