@@ -52,6 +52,47 @@
 </div>
 
 
+<div class="contentSection" style="background-color: white;">
+    <div class="CenterAndRestrictWidth">
+            @if(CurrentPage.HasValue("fullWidthContentArea1Title")) {
+        <h2 style="padding: 24px 0;"> @Umbraco.Field("fullWidthContentArea1Title")</h2>}
+        <div style="padding: 24px 0;" >
+             @if(CurrentPage.HasValue("fullWidthContentArea1Content")) {
+                <p>@Umbraco.Field("fullWidthContentArea1Content")</p>
+            }
+        </div>
+        <p></p>
+    </div>
+</div>
+
+ <div  class="contentSection grey-background" >
+        <div class="CenterAndRestrictWidth nopadding row">
+            <div class="col-md-6 nopadding">
+                @if(CurrentPage.HasValue("area2Column1Title")) {
+                    <h3 class="subheading">@Umbraco.Field("area2Column1Title")</h3>
+                }
+                @if(CurrentPage.HasValue("area2Column1Picture")) {
+                    <img src="@CurrentPage.area2Column1Picture.Url" alt="@CurrentPage.area2Column1Picture.Name" style="width:100%; height: auto;padding: 30px;padding-top: 18px; padding-bottom: 12px;"/>
+                }
+                @if(CurrentPage.HasValue("area2Column1TextBelowPicture")) {
+                <div style="padding-left: 30px; padding-right: 30px;  padding-top: 24px;">@Umbraco.Field("area2Column1TextBelowPicture")</div>
+                }
+            </div>
+            <div class="col-md-6 nopadding">
+               @if(CurrentPage.HasValue("area2Column2Title")) {
+                    <h3 class="subheading">@Umbraco.Field("area2Column2Title")</h3>
+                }
+               @if(CurrentPage.HasValue("area2Column2Picture")) {
+                    <img src="@CurrentPage.area2Column2Picture.Url" alt="@CurrentPage.area2Column2Picture.Name" style="width:100%; height: auto;padding: 30px;padding-top: 18px; padding-bottom: 12px;"/>
+                }
+                 @if(CurrentPage.HasValue("area2Column2TextBelowPicture")) {
+                <div style="padding-left: 30px; padding-right: 30px;  padding-top: 24px;">@Umbraco.Field("area2Column2TextBelowPicture")</div>
+                }
+            </div>
+        </div>
+    </div>
+
+
 <div style="padding-bottom: 1em;" class="contentSection YourExperience">
         <div class="CenterAndRestrictWidth">
             <h2 style="text-align: center; display: block; margin: 0 auto;padding-top: 36px;">Stress. Friend or foe?</h2>
@@ -83,9 +124,7 @@
             <h2 style="padding-left: 24px; padding-right: 24px;">Injury Prevention</h2>
             <p style="padding-left: 24px; padding-right: 24px;">We identify faulty movement patterns and weak links in the body and correct them before an injury occurs. Essentially this is injury prevention meaning you don’t have to take time out from doing the things you love.</p>
             <p style="padding-left: 24px; padding-right: 24px;">By working ‘pre-hab’ into your training sessions, we ensure that you can give your best, be your strongest and avoid the aches and pains that so many people accept as part of everyday life.</p>
-            @*<p style="padding-left: 24px; padding-right: 24px;">We identifying weak links in the body and/or faulty movement patterns and correct them <b>before</b> an injury occurs. Essentially this is injury prevention meaning you don’t have to take time out doing the things you love.</p>
-                <p style="padding-left: 24px; padding-right: 24px;">By working ‘pre-hab’ sessions into your training routine, we ensure that you can give your best, be your strongest and avoid the aches and pains that so many people accept as part of everyday life.    </p>*@
-        </div>
+         </div>
     </div>
 </div>
 
