@@ -13,54 +13,50 @@
     <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
 }
 
-
-
-<img src="~/Content/Images/Nutrition/Mobile/SimonAndGeorgiaCooking.jpg" width="100%" class="d-lg-none" alt="Beyond Balance cooking together" />
+ <!--Mobile  -->
+ @if(CurrentPage.HasValue("topMobileImage")) {
+  <img src="@CurrentPage.topMobileImage.Url" alt="@CurrentPage.topMobileImage.Name" style="width: 100%; height: 100%;" class="d-lg-none"/>
+ }
 
 
 <div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
 
     <div class="carousel-inner topCarousel" role="listbox">
         <div class="carousel-item active" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/Images/Nutrition/Carousel/SimonGeorgiaKitchen.jpg" alt="Georgia and Simon Cooking Together" />
-        </div>
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture1.Url" alt="@CurrentPage.topCarouselPicture1.Name" style="width:100%;" />
+           </div>
         <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/Images/Nutrition/Carousel/FamilyCookingTime.jpg" alt="Family Cooking Together" />
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture2.Url" alt="@CurrentPage.topCarouselPicture2.Name" style="width:100%;">
         </div>
         <div class="carousel-item " style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/Images/Nutrition/Carousel/FamilyCooking2.jpg" alt="Family Cooking Together">
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture3.Url" alt="@CurrentPage.topCarouselPicture3.Name" style="width:100%;">
         </div>
-
         <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/Images/Nutrition/Carousel/GeorgiaRayleenTooClose.jpg" alt="Family Cooking Together">
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture4.Url" alt="@CurrentPage.topCarouselPicture4.Name" style="width:100%;">
         </div>
     </div>
 </div>
 
+@if(CurrentPage.HasValue("bannerText")) {
 <div class="pageCaption">
     <h3 class="CenterAndRestrictWidth">
-        All disease begins in the gut - Hippocrates
-        @*HIPPOCRATES SAID, “ALL DISEASE BEGINS IN THE GUT”*@
-
-        @*Let food be thy medicine and thy medicine be thy food - Hippocrates*@
+        @Umbraco.Field("bannerText")
     </h3>
 </div>
+}
+
 
 <div style="padding-bottom: 1em;" class="contentSection">
     <div class="CenterAndRestrictWidth">
-        <h2 style="padding-left: 24px; padding-right: 24px;">Nutrition</h2>
+        @if(CurrentPage.HasValue("fullWidthTitle")) {
+        <h2 style="padding-left: 24px; padding-right: 24px;"> @Umbraco.Field("fullWidthTitle")</h2>}
 
         <div class="row">
             <div class="col-md-6 no-gutters">
-                <p class="two-column-layout text18">Hashimoto’s brought me to my knees in 2018 despite a healthier lifestyle than most. My hellish experience battling fatigue, anxiety, depression, cold Intolerance, dry skin, brittle hair, digestive issues, menstrual issues and poor sleep showed me that I could come out on top. Most importantly, I learned that the answer was not likely to be found in the form of a daily pill.</p>
-                <p class="two-column-layout text18">My journey started with me at an advantage having studied thyroid dysfunction while training to become a Nutritional Therapist. My journey was necessarily fuelled by multiple functional tests not found in GP practices (CBC, thyroid antibodies, stool test & FST tests) to get to the root causes as well as continuous thyroid research.</p>
-
-                <p class="two-column-layout text18">Step by step, I discovered what I needed to eat (and avoid eating), how I needed to exercise (and avoid exercising), how my sleep patterns needed to change, what supplements I needed to take (and avoid taking), what I needed to do to heal my gut & liver and how I needed to manage stress daily. I was able to calm my overactive immune system and heal my thyroid.</p>
-                <p class="two-column-layout text18">Now I dedicate my practice to the closely intertwined systems of the thyroid and the digestive system. Here’s to a healthy thyroid and a happy gut!</p>
-               
+                <div class="text18">@Umbraco.Field("column1TextArea1")</div>
             </div>
             <div class="col-md-6 no-gutters">
-                <img style="margin: 0 auto;display: block;" src="~/Content/Images/Nutrition/GeorgiaThyroid.jpg" />
+                <img style="margin: 0 auto;display: block;" src="@CurrentPage.column2PictureArea1.Url" alt="@CurrentPage.column2PictureArea1.Name" />
             </div>
         </div>
     </div>
