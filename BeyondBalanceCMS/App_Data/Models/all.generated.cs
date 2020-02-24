@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1e87f5d91b7b7a0f")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c78b497705545f80")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -168,6 +168,114 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Training, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Area3 Title
+		///</summary>
+		[ImplementPropertyType("area3Title")]
+		public string Area3Title
+		{
+			get { return this.GetPropertyValue<string>("area3Title"); }
+		}
+
+		///<summary>
+		/// Background Image
+		///</summary>
+		[ImplementPropertyType("backgroundImage")]
+		public IPublishedContent BackgroundImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("backgroundImage"); }
+		}
+
+		///<summary>
+		/// Banner Text
+		///</summary>
+		[ImplementPropertyType("bannerText")]
+		public string BannerText
+		{
+			get { return this.GetPropertyValue<string>("bannerText"); }
+		}
+
+		///<summary>
+		/// Column1 Area3
+		///</summary>
+		[ImplementPropertyType("column1Area3")]
+		public IHtmlString Column1Area3
+		{
+			get { return this.GetPropertyValue<IHtmlString>("column1Area3"); }
+		}
+
+		///<summary>
+		/// Column1 Picture Area2
+		///</summary>
+		[ImplementPropertyType("column1PictureArea2")]
+		public IPublishedContent Column1PictureArea2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("column1PictureArea2"); }
+		}
+
+		///<summary>
+		/// Column2 Area3
+		///</summary>
+		[ImplementPropertyType("column2Area3")]
+		public IHtmlString Column2Area3
+		{
+			get { return this.GetPropertyValue<IHtmlString>("column2Area3"); }
+		}
+
+		///<summary>
+		/// Column2 Picture Area2
+		///</summary>
+		[ImplementPropertyType("column2PictureArea2")]
+		public IPublishedContent Column2PictureArea2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("column2PictureArea2"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Content
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Content")]
+		public IHtmlString FullWidthArea1Content
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWidthArea1Content"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Title")]
+		public string FullWidthArea1Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea1Title"); }
+		}
+
+		///<summary>
+		/// MP4 Video File
+		///</summary>
+		[ImplementPropertyType("mP4VideoFile")]
+		public IPublishedContent MP4VideoFile
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("mP4VideoFile"); }
+		}
+
+		///<summary>
+		/// Top Mobile Image
+		///</summary>
+		[ImplementPropertyType("topMobileImage")]
+		public IPublishedContent TopMobileImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topMobileImage"); }
+		}
+
+		///<summary>
+		/// Webm Video File
+		///</summary>
+		[ImplementPropertyType("webmVideoFile")]
+		public IPublishedContent WebmVideoFile
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("webmVideoFile"); }
 		}
 
 		///<summary>
