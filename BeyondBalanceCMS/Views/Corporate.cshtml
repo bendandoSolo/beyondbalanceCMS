@@ -32,13 +32,15 @@
 </div>
 }
 
+@Umbraco.Field("fullWidthArea1Title")
+
 <div class="contentSection" style="background-color: white;">
     <div class="CenterAndRestrictWidth">
-            @if(CurrentPage.HasValue("fullWidthContentArea1Title")) {
-        <h2 style="padding: 24px 0;"> @Umbraco.Field("fullWidthContentArea1Title")</h2>}
+            @if(CurrentPage.HasValue("fullWidthArea1Title")) {
+        <h2 style="padding: 24px 0;"> @Umbraco.Field("fullWidthArea1Title")</h2>}
         <div style="padding: 24px 0;" >
-             @if(CurrentPage.HasValue("fullWidthContentArea1Content")) {
-                <p>@Umbraco.Field("fullWidthContentArea1Content")</p>
+             @if(CurrentPage.HasValue("fullWidthArea1Content")) {
+                <p>@Umbraco.Field("fullWidthArea1Content")</p>
             }
         </div>
         <p></p>

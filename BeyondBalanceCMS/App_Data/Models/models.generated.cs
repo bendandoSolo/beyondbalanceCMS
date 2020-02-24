@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1767438d3d207fcf")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "79b43ed32e67637f")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -199,6 +199,132 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Area2 Column1 Picture
+		///</summary>
+		[ImplementPropertyType("area2Column1Picture")]
+		public IPublishedContent Area2Column1Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("area2Column1Picture"); }
+		}
+
+		///<summary>
+		/// Area2 Column1 Text Below Picture
+		///</summary>
+		[ImplementPropertyType("area2Column1TextBelowPicture")]
+		public IHtmlString Area2Column1TextBelowPicture
+		{
+			get { return this.GetPropertyValue<IHtmlString>("area2Column1TextBelowPicture"); }
+		}
+
+		///<summary>
+		/// Area2 Column1 Title
+		///</summary>
+		[ImplementPropertyType("area2Column1Title")]
+		public string Area2Column1Title
+		{
+			get { return this.GetPropertyValue<string>("area2Column1Title"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Picture
+		///</summary>
+		[ImplementPropertyType("area2Column2Picture")]
+		public IPublishedContent Area2Column2Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("area2Column2Picture"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Text Below Picture
+		///</summary>
+		[ImplementPropertyType("area2Column2TextBelowPicture")]
+		public IHtmlString Area2Column2TextBelowPicture
+		{
+			get { return this.GetPropertyValue<IHtmlString>("area2Column2TextBelowPicture"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Title
+		///</summary>
+		[ImplementPropertyType("area2Column2Title")]
+		public string Area2Column2Title
+		{
+			get { return this.GetPropertyValue<string>("area2Column2Title"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Content
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Content")]
+		public IHtmlString FullWidthArea1Content
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWidthArea1Content"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Title")]
+		public string FullWidthArea1Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea1Title"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture1
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture1")]
+		public IPublishedContent TopCarouselPicture1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture1"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture2
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture2")]
+		public IPublishedContent TopCarouselPicture2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture2"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture3
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture3")]
+		public IPublishedContent TopCarouselPicture3
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture3"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture4
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture4")]
+		public IPublishedContent TopCarouselPicture4
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture4"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture5
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture5")]
+		public IPublishedContent TopCarouselPicture5
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture5"); }
+		}
+
+		///<summary>
+		/// Top Mobile Image
+		///</summary>
+		[ImplementPropertyType("topMobileImage")]
+		public IPublishedContent TopMobileImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topMobileImage"); }
+		}
+
+		///<summary>
 		/// Description Metadata: Text used by search engines to index pages
 		///</summary>
 		[ImplementPropertyType("descriptionMetadata")]
@@ -312,15 +438,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString FullWidthContentArea1Content
 		{
 			get { return this.GetPropertyValue<IHtmlString>("fullWidthContentArea1Content"); }
-		}
-
-		///<summary>
-		/// Full Width Area1 Main Content
-		///</summary>
-		[ImplementPropertyType("fullWidthContentArea1MainContent")]
-		public string FullWidthContentArea1MainContent
-		{
-			get { return this.GetPropertyValue<string>("fullWidthContentArea1MainContent"); }
 		}
 
 		///<summary>
