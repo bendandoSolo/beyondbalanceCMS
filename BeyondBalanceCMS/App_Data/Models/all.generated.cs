@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9fc4168c072dc3df")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.9")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5d6a78165ab78c96")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.11")]
 
 
 // FILE: models.generated.cs
@@ -525,6 +525,87 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Nutrition, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Banner Text
+		///</summary>
+		[ImplementPropertyType("bannerText")]
+		public string BannerText
+		{
+			get { return this.GetPropertyValue<string>("bannerText"); }
+		}
+
+		///<summary>
+		/// Column1 Text Area1
+		///</summary>
+		[ImplementPropertyType("column1TextArea1")]
+		public IHtmlString Column1TextArea1
+		{
+			get { return this.GetPropertyValue<IHtmlString>("column1TextArea1"); }
+		}
+
+		///<summary>
+		/// Column2 Picture Area1
+		///</summary>
+		[ImplementPropertyType("column2PictureArea1")]
+		public IPublishedContent Column2PictureArea1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("column2PictureArea1"); }
+		}
+
+		///<summary>
+		/// Full Width Title
+		///</summary>
+		[ImplementPropertyType("fullWidthTitle")]
+		public string FullWidthTitle
+		{
+			get { return this.GetPropertyValue<string>("fullWidthTitle"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture1
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture1")]
+		public IPublishedContent TopCarouselPicture1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture1"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture2
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture2")]
+		public IPublishedContent TopCarouselPicture2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture2"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture3
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture3")]
+		public IPublishedContent TopCarouselPicture3
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture3"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture4
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture4")]
+		public IPublishedContent TopCarouselPicture4
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture4"); }
+		}
+
+		///<summary>
+		/// Top Mobile Image
+		///</summary>
+		[ImplementPropertyType("topMobileImage")]
+		public IPublishedContent TopMobileImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topMobileImage"); }
 		}
 
 		///<summary>

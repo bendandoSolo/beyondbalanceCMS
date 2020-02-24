@@ -12,44 +12,37 @@
     <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
 }
 
-<img src="~/Content/Images/PreHabRehab/Mobile/SimonPressingGeorgiasNeck.jpg" width="100%" class="d-lg-none" alt="Beyond Balance rehabilitation" />
-
-
+ 
+ <!--Mobile  -->
+ @if(CurrentPage.HasValue("topMobileImage")) {
+  <img src="@CurrentPage.topMobileImage.Url" alt="@CurrentPage.topMobileImage.Name" style="width: 100%; height: 100%;" class="d-lg-none"/>
+ }
 
 
 <div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
-
     <div class="carousel-inner topCarousel" role="listbox">
-
-        @*<div class="carousel-item active" style="height: auto;width:100%;">
-                <img class="d-block img-fluid SimonRehab1" alt="Simon Alebiosu Rehabilitation Ben Roberts" />
-            </div>
-            <div class="carousel-item" style="height: auto;width:100%;">
-                 <img class="d-block img-fluid GeorgiaRehab1" alt="Georgia Lennard Rehabilitation Emma Cullen">
-            </div>
-            <div class="carousel-item " style="height: auto;width:100%;">
-                 <img class="d-block img-fluid SimonRehab2" alt="Simon Alebiosu Rehabilitation of Woman">
-            </div>*@
-
         <div class="carousel-item active" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/Images/PreHabRehab/SiPressingGeorgiasShoulders.jpg" alt="Simon Alebiosu Rehabilitation Georgia Lennard" style="width:100%;" />
-            @*<img class="d-block img-fluid SimonPressingGeorgiasShoulders" alt="Simon Alebiosu Rehabilitation Georgia Lennard" />*@
-        </div>
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture1.Url" alt="@CurrentPage.topCarouselPicture1.Name" style="width:100%;" />
+           </div>
         <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/images/PreHabRehab/SiBandWorkSam.jpg" alt="Simon Alebiosu Rehabilitation Sam" style="width:100%;">
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture2.Url" alt="@CurrentPage.topCarouselPicture2.Name" style="width:100%;">
         </div>
         <div class="carousel-item " style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/images/PreHabRehab/SimonStretching.jpg" alt="Simon Alebiosu Rehabilitation Stretching" style="width:100%;">
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture3.Url" alt="@CurrentPage.topCarouselPicture3.Name" style="width:100%;">
         </div>
         <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="~/Content/images/PreHabRehab/SimonBandWorkBen.jpg" alt="Simon Alebiosu Rehabilitation Ben Roberts" style="width:100%;">
+            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture4.Url" alt="@CurrentPage.topCarouselPicture4.Name" style="width:100%;">
         </div>
         <div class="carousel-item " style="height: auto;width:100%;">
-            <img class="d-block img-fluid " src="~/Content/images/PreHabRehab/GeorgiaTrainingEmma.jpg" alt="Georgia Lennard Rehabilitation Emma Cullen" style="width:100%;">
+            <img class="d-block img-fluid " src="@CurrentPage.topCarouselPicture5.Url" alt="@CurrentPage.topCarouselPicture5.Name" style="width:100%;">
         </div>
 
     </div>
 </div>
+
+
+
+
 
 
 <div class="contentSection" style="background-color: white;">
