@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c78b497705545f80")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "821ed43d128eaab")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -63,6 +63,303 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HomePage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Enable PopUp
+		///</summary>
+		[ImplementPropertyType("enablePopUp")]
+		public bool EnablePopUp
+		{
+			get { return this.GetPropertyValue<bool>("enablePopUp"); }
+		}
+
+		///<summary>
+		/// FullWidth Area1 ButtonLink
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1ButtonLink")]
+		public string FullWidthArea1ButtonLink
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea1ButtonLink"); }
+		}
+
+		///<summary>
+		/// FullWidth Area1 ButtonText
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1ButtonText")]
+		public string FullWidthArea1ButtonText
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea1ButtonText"); }
+		}
+
+		///<summary>
+		/// FullWidth Area1 Content
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Content")]
+		public IHtmlString FullWidthArea1Content
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWidthArea1Content"); }
+		}
+
+		///<summary>
+		/// FullWidth Area1 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Title")]
+		public string FullWidthArea1Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea1Title"); }
+		}
+
+		///<summary>
+		/// FullWidth Area2 ButtonLink
+		///</summary>
+		[ImplementPropertyType("fullWidthArea2ButtonLink")]
+		public string FullWidthArea2ButtonLink
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea2ButtonLink"); }
+		}
+
+		///<summary>
+		/// FullWidth Area2 ButtonText
+		///</summary>
+		[ImplementPropertyType("fullWidthArea2ButtonText")]
+		public string FullWidthArea2ButtonText
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea2ButtonText"); }
+		}
+
+		///<summary>
+		/// FullWidth Area2 Column1 Picture
+		///</summary>
+		[ImplementPropertyType("fullWidthArea2Column1Picture")]
+		public IPublishedContent FullWidthArea2Column1Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("fullWidthArea2Column1Picture"); }
+		}
+
+		///<summary>
+		/// FullWidth Area2 Column2 Picture
+		///</summary>
+		[ImplementPropertyType("fullWidthArea2Column2Picture")]
+		public IPublishedContent FullWidthArea2Column2Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("fullWidthArea2Column2Picture"); }
+		}
+
+		///<summary>
+		/// FullWidth Area2 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthArea2Title")]
+		public string FullWidthArea2Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea2Title"); }
+		}
+
+		///<summary>
+		/// FullWidth Area2 Title2
+		///</summary>
+		[ImplementPropertyType("fullWidthArea2Title2")]
+		public string FullWidthArea2Title2
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea2Title2"); }
+		}
+
+		///<summary>
+		/// FullWidth Area3 ButtonLink
+		///</summary>
+		[ImplementPropertyType("fullWidthArea3ButtonLink")]
+		public string FullWidthArea3ButtonLink
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea3ButtonLink"); }
+		}
+
+		///<summary>
+		/// FullWidth Area3 ButtonText
+		///</summary>
+		[ImplementPropertyType("fullWidthArea3ButtonText")]
+		public string FullWidthArea3ButtonText
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea3ButtonText"); }
+		}
+
+		///<summary>
+		/// FullWidth Area3 ButtonTitle
+		///</summary>
+		[ImplementPropertyType("fullWidthArea3ButtonTitle")]
+		public string FullWidthArea3ButtonTitle
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea3ButtonTitle"); }
+		}
+
+		///<summary>
+		/// FullWidth Area3 ContentBelowButton
+		///</summary>
+		[ImplementPropertyType("fullWidthArea3ContentBelowButton")]
+		public IHtmlString FullWidthArea3ContentBelowButton
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWidthArea3ContentBelowButton"); }
+		}
+
+		///<summary>
+		/// FullWidth Area3 MainContent
+		///</summary>
+		[ImplementPropertyType("fullWidthArea3MainContent")]
+		public IHtmlString FullWidthArea3MainContent
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWidthArea3MainContent"); }
+		}
+
+		///<summary>
+		/// FullWidth Area3 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthArea3Title")]
+		public string FullWidthArea3Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea3Title"); }
+		}
+
+		///<summary>
+		/// ServiceButton1 Link
+		///</summary>
+		[ImplementPropertyType("serviceButton1Link")]
+		public string ServiceButton1Link
+		{
+			get { return this.GetPropertyValue<string>("serviceButton1Link"); }
+		}
+
+		///<summary>
+		/// ServiceButton1 Text
+		///</summary>
+		[ImplementPropertyType("serviceButton1Text")]
+		public string ServiceButton1Text
+		{
+			get { return this.GetPropertyValue<string>("serviceButton1Text"); }
+		}
+
+		///<summary>
+		/// ServiceButton2 Link
+		///</summary>
+		[ImplementPropertyType("serviceButton2Link")]
+		public string ServiceButton2Link
+		{
+			get { return this.GetPropertyValue<string>("serviceButton2Link"); }
+		}
+
+		///<summary>
+		/// ServiceButton2 Text
+		///</summary>
+		[ImplementPropertyType("serviceButton2Text")]
+		public string ServiceButton2Text
+		{
+			get { return this.GetPropertyValue<string>("serviceButton2Text"); }
+		}
+
+		///<summary>
+		/// ServiceButton3 Link
+		///</summary>
+		[ImplementPropertyType("serviceButton3Link")]
+		public string ServiceButton3Link
+		{
+			get { return this.GetPropertyValue<string>("serviceButton3Link"); }
+		}
+
+		///<summary>
+		/// ServiceButton3 Text
+		///</summary>
+		[ImplementPropertyType("serviceButton3Text")]
+		public string ServiceButton3Text
+		{
+			get { return this.GetPropertyValue<string>("serviceButton3Text"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture1
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture1")]
+		public IPublishedContent TopCarouselPicture1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture1"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture2
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture2")]
+		public IPublishedContent TopCarouselPicture2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture2"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture3
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture3")]
+		public IPublishedContent TopCarouselPicture3
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture3"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture3 Heading
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture3Heading")]
+		public string TopCarouselPicture3Heading
+		{
+			get { return this.GetPropertyValue<string>("topCarouselPicture3Heading"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture3 Text
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture3Text")]
+		public IHtmlString TopCarouselPicture3Text
+		{
+			get { return this.GetPropertyValue<IHtmlString>("topCarouselPicture3Text"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture4
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture4")]
+		public IPublishedContent TopCarouselPicture4
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture4"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture4 Heading
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture4Heading")]
+		public string TopCarouselPicture4Heading
+		{
+			get { return this.GetPropertyValue<string>("topCarouselPicture4Heading"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture4 Text
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture4Text")]
+		public IHtmlString TopCarouselPicture4Text
+		{
+			get { return this.GetPropertyValue<IHtmlString>("topCarouselPicture4Text"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture5
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture5")]
+		public IPublishedContent TopCarouselPicture5
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture5"); }
+		}
+
+		///<summary>
+		/// Top Mobile Image
+		///</summary>
+		[ImplementPropertyType("topMobileImage")]
+		public IPublishedContent TopMobileImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topMobileImage"); }
 		}
 
 		///<summary>
