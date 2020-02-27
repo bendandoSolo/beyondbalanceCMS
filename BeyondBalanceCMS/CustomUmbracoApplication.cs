@@ -36,6 +36,14 @@ namespace BeyondBalanceCMS
                    "home/contact",
                    new { controller = "Home", action = "contact" }
            );
+
+            RouteTable.Routes.MapRoute(
+                   "Home",
+                   "home/PrivacyPolicy",
+                   new { controller = "Home", action = "PrivacyPolicy" }
+           );
+
+
             RouteTable.Routes.MapRoute(
                    "HealthyRecipies",
                    "home/healthyRecipes",

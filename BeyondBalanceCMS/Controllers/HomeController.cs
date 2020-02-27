@@ -98,5 +98,13 @@ namespace BeyondBalanceCMS.Controllers
 
 
 
+
+
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
+
     }
 }
