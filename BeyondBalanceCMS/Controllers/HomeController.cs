@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Syndication;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Umbraco.Web;
@@ -27,22 +28,12 @@ namespace BeyondBalanceCMS.Controllers
 
         }
 
-
-
-
-        // GET: Home
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
         public ActionResult HealthyRecipes(int MealsPage = 0, int SnacksPage = 0)
         {
             if (MealsPage < 0) { MealsPage = 0; }
             if (SnacksPage < 0) { SnacksPage = 0; }
             ViewBag.MealsPage = MealsPage;
             ViewBag.SnacksPage = SnacksPage;
-
             IEnumerable<SyndicationItem> latestMealsItems = _rssProvider.GetLatest(MealsPage);
             IEnumerable<SyndicationItem> latestMealsItems2 = _rssProvider2.GetLatest(SnacksPage);
             //should not be within controller
@@ -59,42 +50,53 @@ namespace BeyondBalanceCMS.Controllers
             int page = id / 4;
             int index = id % 4;
             var latestMealsItems = _rssProvider.GetLatest(page);
-
             SyndicationItem model = latestMealsItems.ElementAt(index);
             model = SyndicationItemExtensions.FormatText(model);
-
-
             return View(model);
         }
-
-
 
         public ActionResult BreakfastsAndSides(int id)
         {
             int page = id / 4;
             int index = id % 4;
             var latestMealsItems2 = _rssProvider2.GetLatest(page);
-
             SyndicationItem model = latestMealsItems2.ElementAt(index);
             model = SyndicationItemExtensions.FormatText(model);
             return View(model);
         }
 
-
-
-
-
-
         public ActionResult Contact()
         {
             var rootNode = _umbracoContext.ContentCache.GetById(1055);
-            //ViewBag.Message = "Your contact page.";
-
-            // rootNode.
-            //return View("Test");
-
             return View(new Email());
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<PartialViewResult> Submit(Email email)
+        {
+            bool isMessageSent = true;
+
+            //if (ModelState.IsValid)
+            //{
+            //    try
+            //    {
+            //        await BeyondBalance.Services.EmailService.SendContactForm(email);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        isMessageSent = false;
+            //    }
+            //}
+            //else
+            //{
+            //    isMessageSent = false;
+            //}
+            return PartialView("_SubmitMessage", isMessageSent);
+        }
+
+
+
 
 
 
@@ -104,7 +106,6 @@ namespace BeyondBalanceCMS.Controllers
         {
             return View();
         }
-
 
     }
 }
