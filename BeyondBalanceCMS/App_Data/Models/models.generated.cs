@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "821ed43d128eaab")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "aa2ff1ea8a5814d4")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -1154,6 +1154,238 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Text
 		{
 			get { return this.GetPropertyValue<string>("text"); }
+		}
+	}
+
+	/// <summary>Thyroid Course Module</summary>
+	[PublishedContentModel("thyroidCourseModule")]
+	public partial class ThyroidCourseModule : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "thyroidCourseModule";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ThyroidCourseModule(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ThyroidCourseModule, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Worksheets 1-2: Image Worksheet
+		///</summary>
+		[ImplementPropertyType("GridContainer1")]
+		public IPublishedContent GridContainer1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("GridContainer1"); }
+		}
+
+		///<summary>
+		/// Text Area at top of modules pages
+		///</summary>
+		[ImplementPropertyType("textAreaAtTopOfModulesPages")]
+		public IHtmlString TextAreaAtTopOfModulesPages
+		{
+			get { return this.GetPropertyValue<IHtmlString>("textAreaAtTopOfModulesPages"); }
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
+		}
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
+		}
+	}
+
+	/// <summary>Thyroid Course</summary>
+	[PublishedContentModel("stress1")]
+	public partial class Stress1 : PublishedContentModel, ITitleSeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "stress1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Stress1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Stress1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Area2 Column1 Picture
+		///</summary>
+		[ImplementPropertyType("area2Column1Picture")]
+		public IPublishedContent Area2Column1Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("area2Column1Picture"); }
+		}
+
+		///<summary>
+		/// Area2 Column1 Text Below Picture
+		///</summary>
+		[ImplementPropertyType("area2Column1TextBelowPicture")]
+		public IHtmlString Area2Column1TextBelowPicture
+		{
+			get { return this.GetPropertyValue<IHtmlString>("area2Column1TextBelowPicture"); }
+		}
+
+		///<summary>
+		/// Area2 Column1 Title
+		///</summary>
+		[ImplementPropertyType("area2Column1Title")]
+		public string Area2Column1Title
+		{
+			get { return this.GetPropertyValue<string>("area2Column1Title"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Picture
+		///</summary>
+		[ImplementPropertyType("area2Column2Picture")]
+		public IPublishedContent Area2Column2Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("area2Column2Picture"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Text Below Picture
+		///</summary>
+		[ImplementPropertyType("area2Column2TextBelowPicture")]
+		public IHtmlString Area2Column2TextBelowPicture
+		{
+			get { return this.GetPropertyValue<IHtmlString>("area2Column2TextBelowPicture"); }
+		}
+
+		///<summary>
+		/// Area2 Column2 Title
+		///</summary>
+		[ImplementPropertyType("area2Column2Title")]
+		public string Area2Column2Title
+		{
+			get { return this.GetPropertyValue<string>("area2Column2Title"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Content
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Content")]
+		public IHtmlString FullWidthArea1Content
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWidthArea1Content"); }
+		}
+
+		///<summary>
+		/// Full Width Area1 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Title")]
+		public string FullWidthArea1Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea1Title"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture1
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture1")]
+		public IPublishedContent TopCarouselPicture1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture1"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture2
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture2")]
+		public IPublishedContent TopCarouselPicture2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture2"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture3
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture3")]
+		public IPublishedContent TopCarouselPicture3
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture3"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture4
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture4")]
+		public IPublishedContent TopCarouselPicture4
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture4"); }
+		}
+
+		///<summary>
+		/// Top Carousel Picture5
+		///</summary>
+		[ImplementPropertyType("topCarouselPicture5")]
+		public IPublishedContent TopCarouselPicture5
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topCarouselPicture5"); }
+		}
+
+		///<summary>
+		/// Top Mobile Image
+		///</summary>
+		[ImplementPropertyType("topMobileImage")]
+		public IPublishedContent TopMobileImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("topMobileImage"); }
+		}
+
+		///<summary>
+		/// Description Metadata: Text used by search engines to index pages
+		///</summary>
+		[ImplementPropertyType("descriptionMetadata")]
+		public string DescriptionMetadata
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetDescriptionMetadata(this); }
+		}
+
+		///<summary>
+		/// Page Title: Title that appears on Browser bar
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TitleSeo.GetPageTitle(this); }
 		}
 	}
 

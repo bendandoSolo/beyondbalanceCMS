@@ -8,7 +8,7 @@
 
 @foreach (var item in selection)
 {
-    if(item.Name != "Training" && item.Name != "HOME" && item.Name != "Stress" && item.Name != "Nutrition" )
+    if(item.Name != "Training" && item.Name != "HOME" && item.Name != "Stress" && item.Name != "Nutrition" && item.Name != "Stress1")
     {
      <li class="nav-item" style="font-family: 'Poppins' !important;">
             <a class="@(item.IsAncestorOrSelf(Model.Content) ? "nav-link--active" : null)" href="@item.Url" style="text-transform: uppercase; display: inline; line-height: 20px;">@item.Name</a>
