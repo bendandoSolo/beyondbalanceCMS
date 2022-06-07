@@ -10,11 +10,30 @@
 {
     if(item.Name != "Training" && item.Name != "HOME" && item.Name != "Stress" && item.Name != "Nutrition" && !item.Name.ToLower().Contains("thyroid course") )
     {
-     <li class="nav-item" style="font-family: 'Poppins' !important;">
-            <a class="@(item.IsAncestorOrSelf(Model.Content) ? "nav-link--active" : null)" href="@item.Url" style="text-transform: uppercase; display: inline; line-height: 20px;">@item.Name</a>
+    if (item.Name != "THYROID THERAPY"){
+    <li class="nav-item" >
+        <a class="nav-link active" style="text-transform: uppercase;" href="@item.Url">@item.Name</a>
+    </li>}
+    else{
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          THYROID
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="@item.Url" style="text-transform: uppercase;">@item.Name</a>
+          @if(item.Children.Count() > 0) {
+                    foreach (var sub in item.Children) {
+                        <a class="dropdown-item" href="@sub.Url" style="text-transform: uppercase;">@sub.Name</a>
+                    }
+                }
+        </div>
+      </li>
+    }
+    @*
+    <li class="nav-item" >
+       <a class="nav-link active" href="@item.Url" style="text-transform: uppercase;">@item.Name</a>
             @if (item.Name == "THYROID THERAPY"){
                     <ul class="dropdown-menu"  style="font-family: 'Poppins' !important; display: block;">
-                    @* @{var subMenuItems = item.Children;} *@
                     @if(item.Children.Count() > 0) {
                         foreach (var sub in item.Children) {
                             <li class="nav-item" style="font-family: 'Poppins' !important;"><a href="@sub.Url">@sub.Name</a></li>
@@ -22,8 +41,21 @@
                     }
                     </ul>
             }
-            
-            
-     </li>
+      </li>
+     *@
+     @*
+     <li class="nav-item" style="font-family: 'Poppins' !important;">
+            <a class="@(item.IsAncestorOrSelf(Model.Content) ? "nav-link--active" : null)" href="@item.Url" style="text-transform: uppercase; display: inline; line-height: 20px;">@item.Name</a>
+            @if (item.Name == "THYROID THERAPY"){
+                    <ul class="dropdown-menu"  style="font-family: 'Poppins' !important; display: block;">
+                    @if(item.Children.Count() > 0) {
+                        foreach (var sub in item.Children) {
+                            <li class="nav-item" style="font-family: 'Poppins' !important;"><a href="@sub.Url">@sub.Name</a></li>
+                        }
+                    }
+                    </ul>
+            }
+     </li>*@
+     
     }
 }

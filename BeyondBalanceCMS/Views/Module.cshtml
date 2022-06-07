@@ -1,7 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Module>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+	ViewBag.Title = @Umbraco.Field("pageTitle");
+}
 
-@{ViewBag.Title = @Umbraco.Field("pageTitle");}
 
 @section MetaData{<meta name="description" content=@Umbraco.Field("descriptionMetadata") />}
 
