@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/_navbar.css",
+    "inputFile": "Content/_navbar.scss"
+  },
+  {
+    "outputFile": "Content/Site.css",
+    "inputFile": "Content/Site.scss"
+  }
+]

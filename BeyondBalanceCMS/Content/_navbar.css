@@ -9,12 +9,10 @@ $lightBlackHeader-color: #444444;
 $BrightPink: #E5325C;
 $BBlightPinkColor: #FEDFC3;*/
 nav, .nav-item {
-  font-family: "Poppins" , sans-serif; }
+  font-family: "Poppins" !important, sans-serif; }
 
-.navbar-expand-lg {
-  padding-right: 0px !important;
-  padding-top: 25px;
-  padding-bottom: 25px; }
+nav.navbar {
+  padding: 0 1rem !important; }
 
 .collapse .navbar-collapse {
   background-color: white;
@@ -76,10 +74,11 @@ li.nav-item a, #dropDownMenu {
   padding-right: 10px;
   font-family: "Poppins" , sans-serif; }
 
+/*, #dropDownMenu*/
 @media only screen and (min-width: 992px) {
-  li.nav-item a, #dropDownMenu {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  li.nav-item > a {
+    padding-top: 40px;
+    padding-bottom: 40px;
     line-height: 20px;
     color: black; } }
 

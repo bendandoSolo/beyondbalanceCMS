@@ -1,17 +1,13 @@
 ﻿/*NavBar Styling*/
 @import "_colours.scss";
 
-
 //#WholeNav
 nav, .nav-item {
-    font-family: "Poppins" , sans-serif;
+    font-family: "Poppins" !important, sans-serif;
 }
 
-
-.navbar-expand-lg{
-    padding-right: 0px !important;
-    padding-top:    25px;
-    padding-bottom:  25px;
+nav.navbar{
+    padding: 0 1rem !important;
 }
 
 .collapse .navbar-collapse {
@@ -53,7 +49,6 @@ nav, .nav-item {
 }
 
 @media only screen and (max-width: 991px) {
-
     li.nav-item a:hover, #dropDownMenu:hover {
         padding-right: 10px;
         padding-left: 10px;
@@ -63,10 +58,6 @@ nav, .nav-item {
         opacity: 1;
         color: white !important;
     }
-
-    .navbar{
-        //padding-right: 5px;
-    }
 }
 
 .navbar-toggler {
@@ -74,21 +65,16 @@ nav, .nav-item {
 }
 
 
-
-
-
 .dropdown-menu {
     width: 95px !important;
     min-width: 95px !important;
     border: none;
-
     li a {
         padding-right: 10px;
         padding-left: 10px;
         width: 95px !important;
         min-width: 95px !important;
     }
-
     li {
         padding-right: 10px;
         padding-left: 10px;
@@ -97,12 +83,11 @@ nav, .nav-item {
     }
 }
 
-
-    .dropdown-menu li a:hover {
-        background-color: $Grey-color;
-        opacity: 1;
-        color: white !important;
-    }
+.dropdown-menu li a:hover {
+    background-color: $Grey-color;
+    opacity: 1;
+    color: white !important;
+}
 
 li.nav-item a, #dropDownMenu {
     padding-left: 10px;
@@ -110,34 +95,26 @@ li.nav-item a, #dropDownMenu {
     font-family: "Poppins" , sans-serif;
 }
 
+/*, #dropDownMenu*/
     @media only screen and (min-width : 992px) {
-        li.nav-item a, #dropDownMenu {
-            padding-top: 50px;
-            padding-bottom: 50px;
-           
+        li.nav-item> a {
+            padding-top: 40px;
+            padding-bottom: 40px;
             line-height: 20px;
             color: black;
         }
     }
-
-
-
-
-
 
     li.dropdown > a {
         font-size: 16px;
         color: black !important;
     }
 
-
 a.navbar-brand {
     color: black;
     font-family: Poppins !important;
     font-weight: bold;
     font-size: 40px;
-
-
     img {
         //margin-left: 10px !important;
         width: 320px;
@@ -155,21 +132,16 @@ a.navbar-brand {
         a.navbar-brand {
             font-size: 24px !important;
             margin-right: 0px;
-
             img {
                 padding-top: 10px;
-                //margin-left: -16px;
                 width: 300px;
                 margin-top: 0px;
-                //margin-left: 0 !important;
             }
         }
     }
 
     @media only screen and (max-width : 500px) {
-
         a.navbar-brand img {
-            //padding-top: 16px;
             width: 240px;
         }
         }
