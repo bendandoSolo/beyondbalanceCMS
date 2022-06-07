@@ -8,10 +8,22 @@
 
 @foreach (var item in selection)
 {
-    if(item.Name != "Training" && item.Name != "HOME" && item.Name != "Stress" && item.Name != "Nutrition" && item.Name != "Stress1")
+    if(item.Name != "Training" && item.Name != "HOME" && item.Name != "Stress" && item.Name != "Nutrition" && !item.Name.ToLower().Contains("thyroid course") )
     {
      <li class="nav-item" style="font-family: 'Poppins' !important;">
             <a class="@(item.IsAncestorOrSelf(Model.Content) ? "nav-link--active" : null)" href="@item.Url" style="text-transform: uppercase; display: inline; line-height: 20px;">@item.Name</a>
+            @if (item.Name == "THYROID THERAPY"){
+                    <ul class="dropdown-menu"  style="font-family: 'Poppins' !important; display: block;">
+                    @* @{var subMenuItems = item.Children;} *@
+                    @if(item.Children.Count() > 0) {
+                        foreach (var sub in item.Children) {
+                            <li class="nav-item" style="font-family: 'Poppins' !important;"><a href="@sub.Url">@sub.Name</a></li>
+                        }
+                    }
+                    </ul>
+            }
+            
+            
      </li>
     }
 }

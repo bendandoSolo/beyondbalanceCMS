@@ -1,26 +1,36 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Stress>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ThyroidCourse>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+
 @{
 	Layout = "Master.cshtml";
 }
 
- 
+
 
 @{
     ViewBag.Title = @Umbraco.Field("pageTitle");
 }
 
+
+
 @section MetaData{
     <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
 }
 
+@*
+ @if(CurrentPage.HasValue("topMobileImage")) {
+    <h1>We have the value</h1>
+    <p>@CurrentPage.topMobileImage.Url</p>
+ }*@
+
+
  <!--Mobile  -->
  @if(CurrentPage.HasValue("topMobileImage")) {
-  <img src="@CurrentPage.topMobileImage.Url" alt="@CurrentPage.topMobileImage.Name" style="width: 100%; height: 100%;" class="d-lg-none"/>
+  <img src=@CurrentPage.topMobileImage.Url alt=@CurrentPage.topMobileImage.Name style="width: 100%; height: 100%;" class="d-lg-none"/>
  }
 
- 
 
+  @*
 <div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
     <div class="carousel-inner topCarousel" role="listbox">
         <div class="carousel-item active" style="height: auto;width:100%;">
@@ -41,7 +51,7 @@
 
     </div>
 </div>
-
+*@
 
 
 
@@ -85,7 +95,11 @@
                 }
             </div>
         </div>
+        @if(CurrentPage.HasValue("buttonText")) {  
+        <button type="button" class="btn btn-sample2 text-center" style="margin: 20px auto; display:block; font-size: 18px;"  ><a href='/thyroid-therapy' style='color: white' >&nbsp;@CurrentPage.buttonText&nbsp;</button>
+        }
     </div>
+
 
 @*<div style="padding-bottom: 1em;" class="contentSection YourExperience">
         <div class="CenterAndRestrictWidth">
@@ -103,7 +117,7 @@
             </div>
         </div>
     </div>*@
-
+    
 
 @section Scripts{
     <script>
@@ -111,27 +125,20 @@
             interval: 7500,
             pause: "null"
         });
-
-
         function sizeCarousel() {
             var width = $(window).width();
             var carouselHeight = width * 0.498;
-            //$(".carousel").height(carouselHeight);
             $("#carousel").height(carouselHeight);
             $(".topCarousel").height(carouselHeight);
             $(".d-block").height(carouselHeight);
-            //$(".carousel-inner").height(carouselHeight);
         }
-
         $(document).ready(function () {
             sizeCarousel();
         });
-
         $(window).resize(function () {
             sizeCarousel();
         });
-
-    </script>
-}
+        
+    </script>}
 
 

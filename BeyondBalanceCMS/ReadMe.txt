@@ -1,0 +1,33 @@
+
+MAIN THINGS TO REMEMBER
+
+1 Create a document type 
+2 by default a related document is created
+
+To add subpages or subsections
+
+1 go to documentType permissions and add the child node
+these can be added as pages through menu or as subsections within the page itself
+
+Refresh your memory here:
+https://umbraco.tv/videos/umbraco-v7/
+
+
+Setting up templates
+https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/setting-up-our-first-template/
+
+
+
+-----------------------------------------------------------
+UMBRACO CAN BE VERY TRICKY 
+
+several issues arise when page types are not linked to templates correctly and they are not named 
+properly
+if this happens best to delete and readd, no solution good for now, 
+or lookup in models folder try and find the id because the error
+
+Severity	Code	Description	Project	File	Line	Suppression State
+Error	CS0234	The type or namespace name 'ThyroidCourseModule' does not exist in the namespace 'Umbraco.Web.PublishedContentModels' (are you missing an assembly reference?)	5_Views_ThyroidCourseModule.cshtml	C:\Development\Clients\beyondbalanceCMS\BeyondBalanceCMS\BeyondBalanceCMS\Views\ThyroidCourseModule.cshtml	1	Active
+
+Is because the name doesn't match, never been able to fix this.
+

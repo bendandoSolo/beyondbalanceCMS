@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.worksheetsImagesItem>
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+
+@* the fun starts here *@
+
+@if(CurrentPage.HasValue("leftImage") && CurrentPage.HasValue("rightImage")){
+<div class="row">
+  <div class="col-6 col-md-12" style="padding: 0"><img src="@CurrentPage.leftImage.Url" alt="@CurrentPage.leftImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>
+  <div class="col-6 col-md-12" style="padding: 0"><img src="@CurrentPage.rightImage.Url" alt="@CurrentPage.rightImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>
+</div>
+}
+else @if(CurrentPage.HasValue("leftImage"{
+<div class="col-12 offset-3 col-md-12" style="padding: 0"><img src="@CurrentPage.leftImage.Url" alt="@CurrentPage.leftImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>
+}
+else @if(CurrentPage.HasValue("rightImage"{
+<div class="col-6 offset-3 col-md-12" style="padding: 0"><img src="@CurrentPage.rightImage.Url" alt="@CurrentPage.rightImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>
+}
