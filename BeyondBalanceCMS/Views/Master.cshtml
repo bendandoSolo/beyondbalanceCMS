@@ -30,7 +30,6 @@
   <a class="navbar-brand" href="/"><img src="~/Content/Images/General/logo.svg" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon" ></span>
-    @**@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -218,10 +217,8 @@
             var win = window.open(url, '_blank');
             win.focus();
         }
-
-
+        
         $(document).ready(function () {
-
             $(window).resize(function () {
                 if ($(window).width() < 992) {
                     $('#MenuExpander').css("display", "none");
@@ -230,7 +227,6 @@
                     if ($("#dropDownMenuItems").is(":visible")) $('#MenuExpander').css("display", "block");
                 }
             });
-
             $('#dropDownMenu').click(function (e) {
                 var canSee = $("#dropDownMenuItems").is(":visible");
                 var windowWidth = $(window).width();
@@ -243,9 +239,6 @@
                     }
                 }
             });
-
-
-
         });
     </script>
 

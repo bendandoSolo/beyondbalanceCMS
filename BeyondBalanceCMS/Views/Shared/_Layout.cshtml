@@ -21,9 +21,42 @@
 
 
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><img src="~/Content/Images/General/logo.svg" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" style="font-family: 'Poppins' !important;">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SERVICES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/training">TRAINING</a>
+                        <a class="dropdown-item" href="/Thyroid-Courses">THYROID COURSES</a>
+                        <a class="dropdown-item" href="/nutrition">NUTRITION</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/testimonials">TESTIMONIALS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/thyroid-therapy" >THYROID</a>
+                </li>
+                @*@Html.Partial("~/views/partials/navigation/Navigation.cshtml")*@
+                <li class="nav-item">
+                    <a class="nav-link active" href="/home/contact">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <nav class="navbar navbar-expand-lg" style="padding-right: 0px;">
+    @*<nav class="navbar navbar-expand-lg" style="padding-right: 0px;">
         <a class="navbar-brand" href="/"><img src="~/Content/Images/General/logo.svg" /></a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"> &#9776;</span>
@@ -42,13 +75,10 @@
                     </ul>
                 </li>
                 <li class="nav-item" style="font-family: 'Poppins' !important;">
-                    <a href="/corporate">CORPORATE</a>   
-                </li>                
-                <li class="nav-item" style="font-family: 'Poppins' !important;">
-                    <a href="/testimonials">TESTIMONIALS</a>
+                    <a href="/corporate">CORPORATE</a>
                 </li>
                 <li class="nav-item" style="font-family: 'Poppins' !important;">
-                    @Html.ActionLink("HEALTHY RECIPES", "HealthyRecipes", "Home", null, new { @class = "" })
+                    <a href="/testimonials">TESTIMONIALS</a>
                 </li>
                 <li class="nav-item" style="font-family: 'Poppins' !important;">
                     @Html.ActionLink("CONTACT", "Contact", "Home", null, new { @class = "" })
@@ -56,7 +86,7 @@
             </ul>
         </div>
     </nav>
-    <div id="MenuExpander"></div>
+    <div id="MenuExpander"></div>*@
 
 
 
@@ -71,7 +101,7 @@
                 <div><a href="//bendando.com" class="hoverEffect">&copy;Bendando</a></div>
             </div>
             @*<div class="privacy-policy" style="display: block; background-color: green;"><a onclick="openInNewTab('/Home/PrivacyPolicy')" ;>Privacy Policy</a></div>
-        </div>*@
+                </div>*@
             <div class="float-md-right SocialMediaIcons" style="">
 
                 <img id="facebook" class="hoverEffect" src="~/Content/Images/SocialMedia/New/facebook.png" style="padding:5px;width: 39px; height: 39px;" />
@@ -85,7 +115,7 @@
             </div>
 
             <div class="text-center d-md-none hoverEffect" style="padding-top: 15px;"><a href="" onclick="openInNewTab('/Home/PrivacyPolicy')" class="privacy-policy">Privacy Policy</a></div>
-            <div class="text-center d-md-none hoverEffect" ><a href="//bendando.com">&copy;Bendando</a></div>
+            <div class="text-center d-md-none hoverEffect"><a href="//bendando.com">&copy;Bendando</a></div>
         </div>
 
     </div>
