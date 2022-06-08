@@ -67,9 +67,7 @@ nav.navbar {
     min-width: 95px !important; }
   .dropdown-menu li {
     padding-right: 10px;
-    padding-left: 10px;
-    width: 95px !important;
-    min-width: 95px !important; }
+    padding-left: 10px; }
 
 .dropdown-menu li a:hover {
   background-color: #4B4B4B;
