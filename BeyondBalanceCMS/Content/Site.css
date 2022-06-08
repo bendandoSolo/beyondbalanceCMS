@@ -59,8 +59,6 @@ nav.navbar {
   padding-top: 10px; }
 
 .dropdown-menu {
-  width: 95px !important;
-  min-width: 95px !important;
   border: none; }
   .dropdown-menu li a {
     padding-right: 10px;
