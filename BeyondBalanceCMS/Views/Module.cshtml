@@ -40,23 +40,37 @@
 
 @*DIRTY HACK*@
 @foreach(var child in Model.Content.Children) {
-    var leftImageId = child.GetPropertyValue("leftImage");
-    var rightImageId =child.GetPropertyValue("rightImage");
-    var leftImage = Umbraco.Media(Int32.Parse(leftImageId.ToString()));
-    var rightImage = Umbraco.Media(Int32.Parse(rightImageId.ToString()));
-    if (leftImage != null && rightImage != null)
+    string leftImageName = null;
+    string rightImageName = null;
+    string leftImageUrl = null;
+    string rightImageUrl = null;
+
+    if(child.HasValue("leftImage") ){
+        var leftImageId = child.GetPropertyValue("leftImage");
+        var leftImage =  Umbraco.Media(Int32.Parse(leftImageId.ToString()));
+        leftImageName = leftImage.Name;
+        leftImageUrl = leftImage.Url;
+    }
+    if(child.HasValue("rightImage") ){
+       var rightImageId =child.GetPropertyValue("rightImage");
+       var rightImage = Umbraco.Media(Int32.Parse(rightImageId.ToString()));
+       rightImageName = rightImage.Name;
+       rightImageUrl = rightImage.Url;
+    }
+    if (leftImageName != null && rightImageName != null)
     {
     <div class="row">
-      <div class="col-md-6" style="padding: 0"><img src="@leftImage.Url" alt="@leftImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>
-      <div class="col-md-6" style="padding: 0"><img src="@rightImage.Url" alt="@rightImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>
+        <div class="col-md-6" style="padding: 0"><img src="@leftImageUrl" alt="@leftImageName" style="width:100%; height: 100%;padding: 0;" /></div>
+        <div class="col-md-6" style="padding: 0"><img src="@rightImageUrl" alt="@rightImageName" style="width:100%; height: 100%;padding: 0;" /></div>
     </div>
-    }
+     }
     else{
-        if(leftImage != null){<div class="offset-md-3 col-md-6" style="padding: 0"><img src="@leftImage.Url" alt="@leftImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>}
+        if(leftImageName != null){<div class="offset-md-3 col-md-6" style="padding: 0"><img src="@leftImageUrl" alt="@leftImageName" style="width:100%; height: 100%;padding: 0;" /></div>}
         else{
-              if(rightImage != null){<div class="offset-md-3 col-md-6" style="padding: 0"><img src="@rightImage.Url" alt="@rightImage.Name" style="width:100%; height: 100%;padding: 0;" /></div>}
+              if(rightImageName != null){<div class="offset-md-3 col-md-6" style="padding: 0"><img src="@rightImageUrl" alt="@rightImageName" style="width:100%; height: 100%;padding: 0;" /></div>}
         }
     }
+   
 }
 
 

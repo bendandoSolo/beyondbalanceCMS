@@ -15,6 +15,17 @@ https://umbraco.tv/videos/umbraco-v7/
 Setting up templates
 https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/setting-up-our-first-template/
 
+DEPLOYMENT
+---------------
+only publish the files that have been changed to minimize issues going forward
+
+
+include all hidden files in the media folder and publish !!
+include all views and publish
+
+SHOULD GET A SYNC TOOL TO SYNC BOTH ENVIRONMENTS
+
+
 
 
 MAIN THINGS TO REMEMBER OTHERWISE

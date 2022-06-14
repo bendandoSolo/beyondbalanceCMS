@@ -65,7 +65,14 @@
     <script type="text/javascript">
         $("button").click(function() {
             var buttonName = this.id;
+            //console.log(buttonName);
+            console.log(buttonName);
             var idClass = buttonName.substring(0, buttonName.length-3);
+            //console.log(idClass);
+            //var foundId = document.getElementById(idClass);
+            //if (foundId){
+            //$("#"+idClass).toggle(250);
+            //}else{$("#"+buttonName).toggle(250);}
             $("#"+idClass).toggle(250);
             $("."+idClass).toggle(1200);
             $("#"+buttonName).toggle(250);
