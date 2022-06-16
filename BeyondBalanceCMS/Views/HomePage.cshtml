@@ -1,216 +1,224 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@{
-	Layout = "Master.cshtml";
-}
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+    Layout = "Master.cshtml";
+    }
 
-@{
+    @{
     ViewBag.Title = @Umbraco.Field("pageTitle");
-}
+    }
 
-@section MetaData{
+    @section MetaData{
     <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
-}
+    }
 
-@{
-string showPopup = @Model.Content.GetPropertyValue("enablePopUp").ToString();
-}
+    @{
+    string showPopup = @Model.Content.GetPropertyValue("enablePopUp").ToString();
+    }
 
 
-<!-- Modal -->
-@if(showPopup == "True"){
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">YOUR THYROID ACTION PLAN STARTS NOW</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h5 class="text-center">Join our Thyroid mailing list to receive your plan!</h5>
-                <img style="width:300px ; height: auto; display: block; margin: 8px auto;" src="~/Content/Images/Nutrition/GeorgiaThyroid.jpg" />
-                <p class="d-none d-lg-block">Opt in to receive updates on thyroid health, unsubscribe any time.</p>
-                <p class="d-none d-lg-block" >We value your privacy and will never share your data with third parties. </p>
+    <!-- Modal -->
+    @if(showPopup == "True"){
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">YOUR THYROID ACTION PLAN STARTS NOW</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center">Join our Thyroid mailing list to receive your plan!</h5>
+                    <img style="width:300px ; height: auto; display: block; margin: 8px auto;" src="~/Content/Images/Nutrition/GeorgiaThyroid.jpg" />
+                    <p class="d-none d-lg-block">Opt in to receive updates on thyroid health, unsubscribe any time.</p>
+                    <p class="d-none d-lg-block">We value your privacy and will never share your data with third parties. </p>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" >No Thanks</button>
-                <button id="modal-yes" type="button" class="btn btn-sample2" style="background-color: #2779A8" href="/Home/Contact">Sign Up</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No Thanks</button>
+                    <button id="modal-yes" type="button" class="btn btn-sample2" style="background-color: #2779A8" href="/Home/Contact">Sign Up</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-}
+    }
 
-<!--Should be a carousel-->
-@if(CurrentPage.HasValue("topMobileImage")) {
-  <img src="@CurrentPage.topMobileImage.Url" alt="@CurrentPage.topMobileImage.Name" style="width: 100%; height: 100%;" class="d-lg-none"/>
- }
+    <!--Should be a carousel-->
+    @if(CurrentPage.HasValue("topMobileImage")) {
+    <img src="@CurrentPage.topMobileImage.Url" alt="@CurrentPage.topMobileImage.Name" style="width: 100%; height: 100%;" class="d-lg-none" />
+    }
 
-<div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
-    <div class="carousel-inner topCarousel" role="listbox" style="height: 100% !important;">
-        <div class="carousel-item active" style="height: auto;width:100%;">
-            <img class="d-block img-fluid img-responsive" src="@CurrentPage.topCarouselPicture1.Url" alt="@CurrentPage.topCarouselPicture1.Name" style="display: block !important; width: 100%;" />
-        </div>
-        <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid img-responsive" src="@CurrentPage.topCarouselPicture2.Url" alt="@CurrentPage.topCarouselPicture2.Name" style="display: block !important; width: 100%;" />
-        </div>
-        <div class="carousel-item" style="height: auto;width:100%; ">
-            <img class="d-block img-fluid GeorgiaHomeImage" src="@CurrentPage.topCarouselPicture3.Url" alt="@CurrentPage.topCarouselPicture3.Name" style="width: 100%;" />
-            <div id="GeorgiasQualifications" class="carousel-caption  d-md-block d-none">
-                <p class="carouselQualificationsName">@Umbraco.Field("topCarouselPicture3Heading")</p>
-                <div>@Umbraco.Field("topCarouselPicture3Text")</div>
+    <div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
+        <div class="carousel-inner topCarousel" role="listbox" style="height: 100% !important;">
+            <div class="carousel-item active" style="height: auto;width:100%;">
+                <img class="d-block img-fluid img-responsive" src="@CurrentPage.topCarouselPicture1.Url" alt="@CurrentPage.topCarouselPicture1.Name" style="display: block !important; width: 100%;" />
+            </div>
+            <div class="carousel-item" style="height: auto;width:100%;">
+                <img class="d-block img-fluid img-responsive" src="@CurrentPage.topCarouselPicture2.Url" alt="@CurrentPage.topCarouselPicture2.Name" style="display: block !important; width: 100%;" />
+            </div>
+            <div class="carousel-item" style="height: auto;width:100%; ">
+                <img class="d-block img-fluid GeorgiaHomeImage" src="@CurrentPage.topCarouselPicture3.Url" alt="@CurrentPage.topCarouselPicture3.Name" style="width: 100%;" />
+                <div id="GeorgiasQualifications" class="carousel-caption  d-md-block d-none">
+                    <p class="carouselQualificationsName">@Umbraco.Field("topCarouselPicture3Heading")</p>
+                    <div>@Umbraco.Field("topCarouselPicture3Text")</div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: auto;width:100%;">
+                <img class="d-block img-fluid " src="@CurrentPage.topCarouselPicture4.Url" alt="@CurrentPage.topCarouselPicture4.Name" style="width: 100%;">
+                <div id="SimonsQualifications" class="carousel-caption  d-md-block d-none">
+                    <p class="carouselQualificationsName">@Umbraco.Field("topCarouselPicture4Heading")</p>
+                    <div>@Umbraco.Field("topCarouselPicture4Text")</div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: auto;width:100%;">
+                <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture5.Url" alt="@CurrentPage.topCarouselPicture5.Name" style="width: 100%;">
             </div>
         </div>
-        <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid " src="@CurrentPage.topCarouselPicture4.Url" alt="@CurrentPage.topCarouselPicture4.Name" style="width: 100%;">
-            <div id="SimonsQualifications" class="carousel-caption  d-md-block d-none">
-                <p class="carouselQualificationsName">@Umbraco.Field("topCarouselPicture4Heading")</p>
-                <div>@Umbraco.Field("topCarouselPicture4Text")</div>
-            </div>
-        </div>
-        <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture5.Url" alt="@CurrentPage.topCarouselPicture5.Name" style="width: 100%;">
-        </div>
     </div>
-</div>
 
-<div style="padding-top: 0px; padding-bottom:12px;" class="d-lg-none">
-    <div class="row">
-        <div class="col-sm-6 no-gutters nopadding" style="padding-top: 8px; padding-bottom: 15px;">
-            <p style="padding: 0px 12px 0px 12px;text-align: center; font-size: 20px;margin-top: 18px;margin-bottom: 12px;">@Umbraco.Field("topCarouselPicture3Heading")</p>
-            <div style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">@Umbraco.Field("topCarouselPicture3Text")</div>
-        </div>
-        <div class="col-sm-6 hidden-md-up no-gutters" style="padding-top: 8px; padding-bottom: 15px;">
-            <p style="padding: 0px 12px 0px 12px; text-align: center;font-size: 20px;margin-top: 18px;margin-bottom: 12px;">@Umbraco.Field("topCarouselPicture4Heading")</p>
-            <div style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">@Umbraco.Field("topCarouselPicture4Text")</div>
-        </div>
-    </div>
-</div>
-
-<div style="width: 100%; border: 5px solid white; border-bottom: 12px solid white;">
-    <div class="container-fluid" style="width: 100%; height: 100%;">
+    <div style="padding-top: 0px; padding-bottom:12px;" class="d-lg-none">
         <div class="row">
-            <div class="col-md-4 no-gutters nopadding  button-services" onclick="document.location.href='@Umbraco.Field("serviceButton1Link")'">
-                @Umbraco.Field("serviceButton1Text")
+            <div class="col-sm-6 no-gutters nopadding" style="padding-top: 8px; padding-bottom: 15px;">
+                <p style="padding: 0px 12px 0px 12px;text-align: center; font-size: 20px;margin-top: 18px;margin-bottom: 12px;">@Umbraco.Field("topCarouselPicture3Heading")</p>
+                <div style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">@Umbraco.Field("topCarouselPicture3Text")</div>
             </div>
-            <div class="col-md-4 no-gutters nopadding button-services" onclick="document.location.href='@Umbraco.Field("serviceButton2Link")'">
-                @Umbraco.Field("serviceButton2Text")
-            </div>
-            <div class="col-md-4 no-gutters nopadding button-services" onclick="document.location.href='@Umbraco.Field("serviceButton3Link")'">
-                @Umbraco.Field("serviceButton3Text")
+            <div class="col-sm-6 hidden-md-up no-gutters" style="padding-top: 8px; padding-bottom: 15px;">
+                <p style="padding: 0px 12px 0px 12px; text-align: center;font-size: 20px;margin-top: 18px;margin-bottom: 12px;">@Umbraco.Field("topCarouselPicture4Heading")</p>
+                <div style="font-size: 17px;padding: 0px 12px 0px 12px;margin-bottom: 6px;text-align: center;">@Umbraco.Field("topCarouselPicture4Text")</div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="contentSection">
-    <div class="CenterAndRestrictWidth">
-        @if(CurrentPage.HasValue("fullWidthArea1Title")) {<h2 class="variable-padding">@Umbraco.Field("fullWidthArea1Title")</h2>}
-         @if(CurrentPage.HasValue("fullWidthArea1Content")) {<div class="variable-padding">@Umbraco.Field("fullWidthArea1Content")</div>}
-        @if(CurrentPage.HasValue("fullWidthArea1ButtonText")) {
-          <button type="button" onclick="document.location.href='@Umbraco.Field("serviceButton3Link")'" class="btn btn-sample2 text-center" style="margin: 40px auto; display:block; font-size: 18px;margin-top: 60px;">&nbsp;@Umbraco.Field("fullWidthArea1ButtonText")&nbsp;</button>
-        }
-        <div class="container-fluid" >
-               @if(CurrentPage.HasValue("fullWidthArea2Title")) {<h3 class="variable-padding">@Umbraco.Field("fullWidthArea2Title")</h3>}
-            <div class="d-none d-sm-block">
-                <div class="row" style="padding: 24px 0;">
-                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column1Picture.Url" alt="@CurrentPage.fullWidthArea2Column1Picture.Name" />
-                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column2Picture.Url" alt="@CurrentPage.fullWidthArea2Column2Picture.Name" />
+    <div style="width: 100%; border: 5px solid white; border-bottom: 12px solid white;">
+        <div class="container-fluid" style="width: 100%; height: 100%;">
+            <div class="row">
+                <div class="col-md-4 no-gutters nopadding  button-services" onclick="document.location.href='@Umbraco.Field(" serviceButton1Link")'">
+                    @Umbraco.Field("serviceButton1Text")
+                </div>
+                <div class="col-md-4 no-gutters nopadding button-services" onclick="document.location.href='@Umbraco.Field(" serviceButton2Link")'">
+                    @Umbraco.Field("serviceButton2Text")
+                </div>
+                <div class="col-md-4 no-gutters nopadding button-services" onclick="document.location.href='@Umbraco.Field(" serviceButton3Link")'">
+                    @Umbraco.Field("serviceButton3Text")
                 </div>
             </div>
-            <div class="d-md-none">
-                <div  style="padding: 24px 0;">
-                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column1Picture.Url" alt="@CurrentPage.fullWidthArea2Column1Picture.Name" />
-                    <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column2Picture.Url" alt="@CurrentPage.fullWidthArea2Column2Picture.Name" />
-                </div>
-            </div>
-             @if(CurrentPage.HasValue("fullWidthArea2Title")) {<h3 class="variable-padding">@Umbraco.Field("fullWidthArea2Title2")</h3>}
-              @if(CurrentPage.HasValue("fullWidthArea2ButtonText")) {
-             <button type="button" onclick="document.location.href='@Umbraco.Field("fullWidthArea2ButtonLink")'" class="btn btn-sample2 text-center" style="margin: 20px auto; display:block; font-size: 18px;">&nbsp;@Umbraco.Field("fullWidthArea2ButtonText")&nbsp;</button>
-            }
-       </div>
+        </div>
     </div>
-</div>
 
-<div class="contentSection grey-background">
-    <div class="CenterAndRestrictWidth">
-         @if(CurrentPage.HasValue("fullWidthArea3Title")) {<h2 class="variable-padding">@Umbraco.Field("fullWidthArea3Title")</h2>}
-         @if(CurrentPage.HasValue("fullWidthArea3MainContent")) {<div class="variable-padding">@Umbraco.Field("fullWidthArea3MainContent")</div> }
-         @if(CurrentPage.HasValue("fullWidthArea3ButtonTitle")) {<h4 class="variable-padding pb-3 pt-4 text-center"><b>@Umbraco.Field("fullWidthArea3ButtonTitle")</b></h4>}
-          @if(CurrentPage.HasValue("fullWidthArea3ButtonText")) {
-                        <button type="button" id="ClassesButton1" class="btn btn-sample2 text-center" style="margin: 20px auto; display:block; font-size: 18px;"  >&nbsp;&nbsp;@Umbraco.Field("fullWidthArea3ButtonText")&nbsp;&nbsp;</button>
-          }
-          @if(CurrentPage.HasValue("fullWidthArea3ContentBelowButton")) {<div class=class="variable-padding pt-5 text-center">@Umbraco.Field("fullWidthArea3ContentBelowButton")</div> }
-       </div>
-</div>
+    <div class="contentSection">
+        <div class="CenterAndRestrictWidth">
+            @if(CurrentPage.HasValue("fullWidthArea1Title")) {<h2 class="variable-padding">@Umbraco.Field("fullWidthArea1Title")</h2>}
+            @if(CurrentPage.HasValue("fullWidthArea1Content")) {<div class="variable-padding">@Umbraco.Field("fullWidthArea1Content")</div>}
+            @if(CurrentPage.HasValue("fullWidthArea1ButtonText")) {
+            <button type="button" onclick="document.location.href='@Umbraco.Field(" serviceButton3Link")'" class="btn btn-sample2 text-center" style="margin: 40px auto; display:block; font-size: 18px;margin-top: 60px;">&nbsp;@Umbraco.Field("fullWidthArea1ButtonText")&nbsp;</button>
+            }
+            <div class="container-fluid">
+                @if(CurrentPage.HasValue("fullWidthArea2Title")) {<h3 class="variable-padding">@Umbraco.Field("fullWidthArea2Title")</h3>}
+                <div class="d-none d-sm-block">
+                    <div class="row" style="padding: 24px 0;">
+                        <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column1Picture.Url" alt="@CurrentPage.fullWidthArea2Column1Picture.Name" />
+                        <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column2Picture.Url" alt="@CurrentPage.fullWidthArea2Column2Picture.Name" />
+                    </div>
+                </div>
+                <div class="d-md-none">
+                    <div style="padding: 24px 0;">
+                        <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column1Picture.Url" alt="@CurrentPage.fullWidthArea2Column1Picture.Name" />
+                        <img class="col-md-6 col-sm-6 no-gutters nopadding" style="width: 100%; height: auto;min-height: initial!important;" src="@CurrentPage.fullWidthArea2Column2Picture.Url" alt="@CurrentPage.fullWidthArea2Column2Picture.Name" />
+                    </div>
+                </div>
+                @if(CurrentPage.HasValue("fullWidthArea2Title")) {<h3 class="variable-padding">@Umbraco.Field("fullWidthArea2Title2")</h3>}
+                @if(CurrentPage.HasValue("fullWidthArea2ButtonText")) {
+                <button type="button" onclick="document.location.href='@Umbraco.Field(" fullWidthArea2ButtonLink")'" class="btn btn-sample2 text-center" style="margin: 20px auto; display:block; font-size: 18px;">&nbsp;@Umbraco.Field("fullWidthArea2ButtonText")&nbsp;</button>
+                }
+            </div>
+        </div>
+    </div>
 
-        @section Scripts{
-            <script>
-                var ClassesLink = '@Umbraco.Field("fullWidthArea3ButtonLink")';
-                $(window).on("load", function () {
-                    setTimeout(showPopUp, 8000);
-                });
-                function showPopUp() {
-                    $('#exampleModal').modal();
-                }
-                $('#modal-yes').on('click', function(event) {
-                      window.location.href = "/Home/Contact";
-                });
-                $('#carousel-button').on('click', function(event) {
-                      window.location.href = "/Home/Contact";
-                });
-                $('#carousel').carousel({
-                    interval: 7500,
-                    pause: "null"
-                });
-                $('#testimonialsCarousel').carousel({
-                    interval: 10000,
-                    pause: "hover"
-                });
-                $("#LearnMoreMain").click(function () {
-                    $("#LearnMoreMain").toggle(250);
-                    $("#AboutUs").toggle(1200);
-                });
-                $("#TrainingLink").click(function () {
-                    window.location.href = "/Home/Training";
-                });
-                $("#PreHabReHabLink").click(function () {
-                    window.location.href = "/Home/PreHabRehab";
-                });
-                $("#NutritionLink").click(function () {
-                    window.location.href = "/Home/Nutrition";
-                });
-                $("#carouselExampleSlidesOnly").click(function () {
-                    window.location.href = "/Home/Testimonials";
-                });
-                $("#RecipesHeader").click(function () {
-                    window.location.href = "/Home/HealthyRecipes";
-                });
-                function sizeCarousel() {
-                    var width = $(window).width();
-                    var carouselHeight = width * 0.498;
-                    //$(".carousel").height(carouselHeight);
-                    $("#carousel").height(carouselHeight);
-                    $(".topCarousel").height(carouselHeight);
-                    $(".d-block").height(carouselHeight);
-                    //$(".carousel-inner").height(carouselHeight);
-                }
-                $(document).ready(function () {
-                    sizeCarousel();
-                });
-                $(window).resize(function () {
-                    sizeCarousel();
-                });
-                // Firefox 1.0+
-                if (typeof InstallTrigger !== 'undefined') {
-                    var elements = document.getElementsByTagName('img');
-                    for (var i = 0, len = elements.length; i < len; i++) { elements[i].removeAttribute('alt'); }
-                }
-                $("#ClassesButton1").click(function () {
-                    window.open(ClassesLink);
-                });
-            </script>
+    @if(CurrentPage.HasValue("bottomBannerText")) {
+    <div class="pageCaption">
+        <h3 class="CenterAndRestrictWidth">
+            @Umbraco.Field("bottomBannerText")
+        </h3>
+    </div>
+    }
+
+    <div class="contentSection grey-background">
+        <div class="CenterAndRestrictWidth">
+            @if(CurrentPage.HasValue("fullWidthArea3Title")) {<h2 class="variable-padding">@Umbraco.Field("fullWidthArea3Title")</h2>}
+            @if(CurrentPage.HasValue("fullWidthArea3MainContent")) {<div class="variable-padding">@Umbraco.Field("fullWidthArea3MainContent")</div> }
+            @if(CurrentPage.HasValue("fullWidthArea3ButtonTitle")) {<h4 class="variable-padding pb-3 pt-4 text-center"><b>@Umbraco.Field("fullWidthArea3ButtonTitle")</b></h4>}
+            @if(CurrentPage.HasValue("fullWidthArea3ButtonText")) {
+            <button type="button" id="ClassesButton1" class="btn btn-sample2 text-center" style="margin: 20px auto; display:block; font-size: 18px;">&nbsp;&nbsp;@Umbraco.Field("fullWidthArea3ButtonText")&nbsp;&nbsp;</button>
+            }
+            @if(CurrentPage.HasValue("fullWidthArea3ContentBelowButton")) {<div class= class="variable-padding pt-5 text-center">@Umbraco.Field("fullWidthArea3ContentBelowButton")</div> }
+        </div>
+    </div>
+
+    @section Scripts{
+    <script>
+        var ClassesLink = '@Umbraco.Field("fullWidthArea3ButtonLink")';
+        $(window).on("load", function () {
+            setTimeout(showPopUp, 8000);
+        });
+        function showPopUp() {
+            $('#exampleModal').modal();
         }
+        $('#modal-yes').on('click', function (event) {
+            window.location.href = "/Home/Contact";
+        });
+        $('#carousel-button').on('click', function (event) {
+            window.location.href = "/Home/Contact";
+        });
+        $('#carousel').carousel({
+            interval: 7500,
+            pause: "null"
+        });
+        $('#testimonialsCarousel').carousel({
+            interval: 10000,
+            pause: "hover"
+        });
+        $("#LearnMoreMain").click(function () {
+            $("#LearnMoreMain").toggle(250);
+            $("#AboutUs").toggle(1200);
+        });
+        $("#TrainingLink").click(function () {
+            window.location.href = "/Home/Training";
+        });
+        $("#PreHabReHabLink").click(function () {
+            window.location.href = "/Home/PreHabRehab";
+        });
+        $("#NutritionLink").click(function () {
+            window.location.href = "/Home/Nutrition";
+        });
+        $("#carouselExampleSlidesOnly").click(function () {
+            window.location.href = "/Home/Testimonials";
+        });
+        $("#RecipesHeader").click(function () {
+            window.location.href = "/Home/HealthyRecipes";
+        });
+        function sizeCarousel() {
+            var width = $(window).width();
+            var carouselHeight = width * 0.498;
+            //$(".carousel").height(carouselHeight);
+            $("#carousel").height(carouselHeight);
+            $(".topCarousel").height(carouselHeight);
+            $(".d-block").height(carouselHeight);
+            //$(".carousel-inner").height(carouselHeight);
+        }
+        $(document).ready(function () {
+            sizeCarousel();
+        });
+        $(window).resize(function () {
+            sizeCarousel();
+        });
+        // Firefox 1.0+
+        if (typeof InstallTrigger !== 'undefined') {
+            var elements = document.getElementsByTagName('img');
+            for (var i = 0, len = elements.length; i < len; i++) { elements[i].removeAttribute('alt'); }
+        }
+        $("#ClassesButton1").click(function () {
+            window.open(ClassesLink);
+        });
+    </script>
+    }

@@ -933,3 +933,15 @@ input[type=checkbox] {
   position: relative;
   top: -1px;
   *overflow: hidden; }
+
+.worksheet-image {
+  padding: 12px;
+  width: 100%;
+  height: auto; }
+
+.worksheet-image-container {
+  padding: 0 !important; }
+
+@media only screen and (max-width: 768px) {
+  .worksheet-image {
+    padding: 6px 0 !important; } }
