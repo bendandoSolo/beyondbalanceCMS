@@ -39,16 +39,16 @@
                 <p class="quoteMark " style="text-align: right;">“</p>
             </div>
             <div class="col-10">
-                <p class=@item.Name>@item.GetPropertyValue("additionalText").ToString()</p>
+                <p class=@index>@item.GetPropertyValue("additionalText").ToString()</p>
                 @{ if (@item.GetPropertyValue("moreAdditionalText") != null)
                 {
-                     <p class=@item.Name>@item.GetPropertyValue("moreAdditionalText").ToString()</p>
+                     <p class=@index>@item.GetPropertyValue("moreAdditionalText").ToString()</p>
                 }}
-                <p id=@item.Name style="display: block; font-weight: normal;">@item.GetPropertyValue("mainText").ToString()</p>
+                <p class=@index style="display: block; font-weight: normal;">@item.GetPropertyValue("mainText").ToString()</p>
                  @{ if (@item.GetPropertyValue("clientName") != null){
                 <h5>@item.GetPropertyValue("clientName").ToString()</h5>
                 }}
-                <button type="button" id=@btnName class="btn btn-secondary text-center" style="margin: 0 auto; display:block; margin-bottom: 10px;"><b>Read More</b></button>
+                <button type="button" id=@index class="btn btn-secondary text-center" style="margin: 0 auto; display:block; margin-bottom: 10px;"><b>Read More</b></button>
             </div>
             <div class="col-1 nopadding">
                 <p class="quoteMark ">”</p>
@@ -64,18 +64,8 @@
 @section scripts {
     <script type="text/javascript">
         $("button").click(function() {
-            var buttonName = this.id;
-            //console.log(buttonName);
-            console.log(buttonName);
-            var idClass = buttonName.substring(0, buttonName.length-3);
-            //console.log(idClass);
-            //var foundId = document.getElementById(idClass);
-            //if (foundId){
-            //$("#"+idClass).toggle(250);
-            //}else{$("#"+buttonName).toggle(250);}
-            $("#"+idClass).toggle(250);
-            $("."+idClass).toggle(1200);
-            $("#"+buttonName).toggle(250);
+            $("."+this.id).toggle(250);
+            $(this).hide();
         });
     </script>
 }

@@ -575,6 +575,7 @@
     <Content Include="Views\Partials\_Banner.cshtml" />
     <Content Include="Views\Shared\GenericError.cshtml" />
     <Content Include="Views\Module.cshtml" />
+    <Content Include="Views\Master.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
