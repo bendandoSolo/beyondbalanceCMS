@@ -1,95 +1,105 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Nutrition>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@{
-	Layout = "Master.cshtml";
-	BeyondBalance.Models.BothRecipesWithSides objmodel = BeyondBalanceCMS.Providers.LatestHealthyRecipes.getLatestTwoRecipes();
-}
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+    Layout = "Master.cshtml";
+    BeyondBalance.Models.BothRecipesWithSides objmodel = BeyondBalanceCMS.Providers.LatestHealthyRecipes.getLatestTwoRecipes();
+    }
 
-@{
+    @{
     ViewBag.Title = @Umbraco.Field("pageTitle");
-}
+    }
 
-@section MetaData{
+    @section MetaData{
     <meta name="description" content=@Umbraco.Field("descriptionMetadata") />
-}
+    }
 
- <!--Mobile  -->
- @if(CurrentPage.HasValue("topMobileImage")) {
-  <img src="@CurrentPage.topMobileImage.Url" alt="@CurrentPage.topMobileImage.Name" style="width: 100%; height: 100%;" class="d-lg-none"/>
- }
-
-
-<div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
-
-    <div class="carousel-inner topCarousel" role="listbox">
-        <div class="carousel-item active" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture1.Url" alt="@CurrentPage.topCarouselPicture1.Name" style="width:100%;" />
-           </div>
-        <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture2.Url" alt="@CurrentPage.topCarouselPicture2.Name" style="width:100%;">
-        </div>
-        <div class="carousel-item " style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture3.Url" alt="@CurrentPage.topCarouselPicture3.Name" style="width:100%;">
-        </div>
-        <div class="carousel-item" style="height: auto;width:100%;">
-            <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture4.Url" alt="@CurrentPage.topCarouselPicture4.Name" style="width:100%;">
-        </div>
-    </div>
-</div>
-
-@if(CurrentPage.HasValue("bannerText")) {
-<div class="pageCaption">
-    <h3 class="CenterAndRestrictWidth">
-        @Umbraco.Field("bannerText")
-    </h3>
-</div>
-}
+    <!--Mobile  -->
+    @if(CurrentPage.HasValue("topMobileImage")) {
+    <img src="@CurrentPage.topMobileImage.Url" alt="@CurrentPage.topMobileImage.Name" style="width: 100%; height: 100%;" class="d-lg-none" />
+    }
 
 
-<div style="padding-bottom: 1em;" class="contentSection">
-    <div class="CenterAndRestrictWidth">
-        @if(CurrentPage.HasValue("fullWidthTitle")) {<h2 style="padding-left: 24px; padding-right: 24px;"> @Umbraco.Field("fullWidthTitle")</h2>}
+    <div data-ride="carousel" class="carousel-fade d-none d-lg-block" id="carousel" style="width: 100%; height: auto;">
 
-        <div class="row">
-            <div class="col-md-6 no-gutters">
-                <div class="text18">@Umbraco.Field("column1TextArea1")</div>
+        <div class="carousel-inner topCarousel" role="listbox">
+            <div class="carousel-item active" style="height: auto;width:100%;">
+                <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture1.Url" alt="@CurrentPage.topCarouselPicture1.Name" style="width:100%;" />
             </div>
-            <div class="col-md-6 no-gutters">
-                <img style="margin: 0 auto;display: block;" src="@CurrentPage.column2PictureArea1.Url" alt="@CurrentPage.column2PictureArea1.Name" />
+            <div class="carousel-item" style="height: auto;width:100%;">
+                <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture2.Url" alt="@CurrentPage.topCarouselPicture2.Name" style="width:100%;">
+            </div>
+            <div class="carousel-item " style="height: auto;width:100%;">
+                <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture3.Url" alt="@CurrentPage.topCarouselPicture3.Name" style="width:100%;">
+            </div>
+            <div class="carousel-item" style="height: auto;width:100%;">
+                <img class="d-block img-fluid" src="@CurrentPage.topCarouselPicture4.Url" alt="@CurrentPage.topCarouselPicture4.Name" style="width:100%;">
             </div>
         </div>
     </div>
-</div>
 
- @Html.Partial("_LatestHealthyRecipes", objmodel)
-
-
-
-@section Scripts{
-    <script>
-        $('#carousel').carousel({
-            interval: 7500,
-            pause: "null"
-        });
+    @if(CurrentPage.HasValue("bannerText")) {
+    <div class="pageCaption">
+        <h3 class="CenterAndRestrictWidth">
+            @Umbraco.Field("bannerText")
+        </h3>
+    </div>
+    }
 
 
-        function sizeCarousel() {
-            var width = $(window).width();
-            var carouselHeight = width * 0.498;
-            //$(".carousel").height(carouselHeight);
-            $("#carousel").height(carouselHeight);
-            $(".topCarousel").height(carouselHeight);
-            $(".d-block").height(carouselHeight);
-            //$(".carousel-inner").height(carouselHeight);
+    <div style="padding-bottom: 1em;" class="contentSection">
+        <div class="CenterAndRestrictWidth">
+            @if(CurrentPage.HasValue("fullWidthTitle")) {<h2 style="padding-left: 24px; padding-right: 24px;"> @Umbraco.Field("fullWidthTitle")</h2>}
+
+            <div class="row">
+                <div class="col-md-6 no-gutters">
+                    <div class="text18">@Umbraco.Field("column1TextArea1")</div>
+                </div>
+                <div class="col-md-6 no-gutters">
+                    <img style="margin: 0 auto;display: block;" src="@CurrentPage.column2PictureArea1.Url" alt="@CurrentPage.column2PictureArea1.Name" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div  class="contentSection ">
+        @if(CurrentPage.HasValue("fullWidthArea1Title")) {<h2>@Umbraco.Field("fullWidthArea1Title")</h2>}
+        @if(CurrentPage.HasValue("fullWithRichTextArea1")) {
+        <div class="CenterAndRestrictWidth text18" style="padding-bottom: 1em;">
+            @Umbraco.Field("fullWithRichTextArea1")
+        </div>}
+    </div>
+    
+
+        @*@Html.Partial("_LatestHealthyRecipes", objmodel)*@
+
+
+
+        @section Scripts{
+        <script>
+            $('#carousel').carousel({
+                interval: 7500,
+                pause: "null"
+            });
+
+
+            function sizeCarousel() {
+                var width = $(window).width();
+                var carouselHeight = width * 0.498;
+                //$(".carousel").height(carouselHeight);
+                $("#carousel").height(carouselHeight);
+                $(".topCarousel").height(carouselHeight);
+                $(".d-block").height(carouselHeight);
+                //$(".carousel-inner").height(carouselHeight);
+            }
+
+            $(document).ready(function () {
+                sizeCarousel();
+            });
+
+            $(window).resize(function () {
+                sizeCarousel();
+            });
+
+        </script>
         }
-
-        $(document).ready(function () {
-            sizeCarousel();
-        });
-
-        $(window).resize(function () {
-            sizeCarousel();
-        });
-
-    </script>
-}

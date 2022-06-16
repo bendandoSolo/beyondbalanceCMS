@@ -130,7 +130,7 @@ h5{
 }
 
 .pageCaption {
-    background-color: $Blue-color;
+    background-color: $LightGreen-color;
     font-family: 'Poppins' !important, sans-serif;
     color: white;
     font-weight: 300 !important;
@@ -457,17 +457,17 @@ h5{
         }
     }
 
-    .button-services {
-        background-color: $Blue-color;
-        color: white;
-        text-align: center;
-        height: 230px;
-        line-height: 230px;
-        font-size: 44px;
-        font-family: 'Poppins';
-        border: 5px solid white;
-        cursor: pointer;
-    }
+.button-services {
+    background-color: $LightGreen-color;
+    color: white;
+    text-align: center;
+    height: 230px;
+    line-height: 230px;
+    font-size: 44px;
+    font-family: 'Poppins';
+    border: 5px solid white;
+    cursor: pointer;
+}
 
     .button-services:hover {
         opacity: 0.75;
@@ -797,11 +797,11 @@ h5{
         background-color: #ffffff;
     }
 
-    .btn-sample2 {
-        color: #ffffff;
-        background-color: $Blue-color; //#f2a1a1;//#1d1145; //(with 50% saturation)
-        border-color: $Blue-color;
-    }
+.btn-sample2 {
+    color: #ffffff;
+    background-color: $LightPink-color; //#f2a1a1;//#1d1145; //(with 50% saturation)
+    border-color: $LightPink-color;
+}
 
     .btn-sample2:hover,
     .btn-sample2:focus,
@@ -809,8 +809,7 @@ h5{
     .btn-sample2.active,
     .open .dropdown-toggle.btn-sample2 {
         color: #ffffff;
-        background-color: $BlueOpacity-color;
-        border-color: $BlueOpacity-color;
+        opacity: 0.7;
     }
 
     .btn-sample2:active,

@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c089067c73acb853")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8526bd6af642ebf8")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -969,12 +969,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// full Width Area1 Title
+		///</summary>
+		[ImplementPropertyType("fullWidthArea1Title")]
+		public string FullWidthArea1Title
+		{
+			get { return this.GetPropertyValue<string>("fullWidthArea1Title"); }
+		}
+
+		///<summary>
 		/// Full Width Title
 		///</summary>
 		[ImplementPropertyType("fullWidthTitle")]
 		public string FullWidthTitle
 		{
 			get { return this.GetPropertyValue<string>("fullWidthTitle"); }
+		}
+
+		///<summary>
+		/// Full With Rich Text Area1
+		///</summary>
+		[ImplementPropertyType("fullWithRichTextArea1")]
+		public IHtmlString FullWithRichTextArea1
+		{
+			get { return this.GetPropertyValue<IHtmlString>("fullWithRichTextArea1"); }
 		}
 
 		///<summary>
